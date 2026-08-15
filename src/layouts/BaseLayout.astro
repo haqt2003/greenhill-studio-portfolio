@@ -9,6 +9,9 @@ interface Props {
 }
 
 const { title, description, lang = 'en', alternateHref } = Astro.props;
+const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astro.url;
+const socialCardURL = new URL('/social-card.png', canonicalURL);
+const alternateURL = alternateHref ? new URL(alternateHref, canonicalURL) : undefined;
 
 ---
 
@@ -27,17 +30,19 @@ const { title, description, lang = 'en', alternateHref } = Astro.props;
     />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/social-card.png" />
+    <meta property="og:image" content={socialCardURL} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="/social-card.png" />
+    <meta name="twitter:image" content={socialCardURL} />
+    <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    {alternateHref && <link rel="alternate" hreflang={lang === 'en' ? 'vi' : 'en'} href={alternateHref} />}
+    {alternateURL && <link rel="alternate" hreflang={lang === 'en' ? 'vi' : 'en'} href={alternateURL} />}
     <title>{title}</title>
     <script is:inline src="/scripts/site.js"></script>
   </head>
