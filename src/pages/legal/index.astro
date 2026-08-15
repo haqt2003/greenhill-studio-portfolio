@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Legal · GreenHill Studio"
+  description="Privacy Policy and Terms of Use for the GreenHill Studio portfolio website."
+  lang="en"
+  alternateHref="/vi/legal/"
+>
+  <div id="top"></div>
+  <Header locale="en" onHome={false} alternateHref="/vi/legal/" />
+
+  <main id="main-content" class="legal-page shell">
+    <section class="legal-hero legal-overview-hero" aria-labelledby="legal-title">
+      <p class="eyebrow">GreenHill Studio legal</p>
+      <h1 id="legal-title">Clear terms for using this website.</h1>
+      <p class="legal-lede">
+        These documents explain how this portfolio handles contact information and the terms that apply when you visit or use the website.
+      </p>
+      <div class="legal-meta">
+        <span>GreenHill Studio portfolio</span>
+        <span>Last updated August 15, 2026</span>
+      </div>
+    </section>
+
+    <section class="legal-cards" aria-label="Legal documents">
+      <article class="legal-card">
+        <p class="eyebrow">Your data</p>
+        <h2>Privacy Policy</h2>
+        <p>Learn what information the website receives, how it is used, and what choices or requests are available to you.</p>
+        <a class="text-link" href="/legal/site-privacy/">Read the policy <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="legal-card">
+        <p class="eyebrow">Using the website</p>
+        <h2>Terms of Use</h2>
+        <p>Review the conditions that apply when visiting this portfolio, using its content, following external links, or sending an enquiry.</p>
+        <a class="text-link" href="/legal/site-terms/">Read the terms <span aria-hidden="true">→</span></a>
+      </article>
+    </section>
+  </main>
+
+  <Footer locale="en" onHome={false} />
+</BaseLayout>

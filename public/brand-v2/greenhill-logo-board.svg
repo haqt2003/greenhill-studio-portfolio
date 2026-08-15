@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">GreenHill Studio logo system preview</title>
+  <desc id="desc">Primary green mark, reversed mark, app icon, and small-size tests.</desc>
+  <rect width="1400" height="900" fill="#F5F7F5"/>
+  <text x="90" y="92" fill="#0D1110" font-family="DM Sans, Arial, sans-serif" font-size="30" font-weight="700">GreenHill Studio</text>
+  <text x="90" y="130" fill="#66716A" font-family="DM Sans, Arial, sans-serif" font-size="18">Logo system · refined continuous hill mark</text>
+
+  <g transform="translate(170 185) scale(1.55)">
+    <path d="M50 180C116 180 151 55 238 55C318 55 340 170 398 170C453 170 481 91 528 91C581 91 594 180 630 180" fill="none" stroke="#0B6B3A" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <rect x="90" y="575" width="440" height="235" rx="34" fill="#0D1110"/>
+  <g transform="translate(130 610) scale(.53)">
+    <path d="M50 180C116 180 151 55 238 55C318 55 340 170 398 170C453 170 481 91 528 91C581 91 594 180 630 180" fill="none" stroke="#F3F7F4" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="130" y="775" fill="#AEBBB3" font-family="DM Sans, Arial, sans-serif" font-size="16">Reversed</text>
+
+  <rect x="570" y="575" width="235" height="235" rx="58" fill="#0D1110"/>
+  <g transform="translate(584 593) scale(.67)">
+    <path d="M28 181C60 181 75 96 119 96C159 96 171 166 199 166C224 166 236 121 258 121C282 121 285 181 297 181" fill="none" stroke="#79D5A7" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="570" y="850" fill="#66716A" font-family="DM Sans, Arial, sans-serif" font-size="16">App icon</text>
+
+  <g transform="translate(875 610)">
+    <text x="0" y="0" fill="#66716A" font-family="DM Sans, Arial, sans-serif" font-size="16">Small-size test</text>
+    <g transform="translate(0 40) scale(.18)">
+      <path d="M50 180C116 180 151 55 238 55C318 55 340 170 398 170C453 170 481 91 528 91C581 91 594 180 630 180" fill="none" stroke="#0B6B3A" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="130" y="75" fill="#66716A" font-family="DM Sans, Arial, sans-serif" font-size="14">32 px</text>
+    <g transform="translate(0 110) scale(.135)">
+      <path d="M50 180C116 180 151 55 238 55C318 55 340 170 398 170C453 170 481 91 528 91C581 91 594 180 630 180" fill="none" stroke="#0B6B3A" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="100" y="138" fill="#66716A" font-family="DM Sans, Arial, sans-serif" font-size="14">24 px</text>
+    <g transform="translate(0 170) scale(.09)">
+      <path d="M50 180C116 180 151 55 238 55C318 55 340 170 398 170C453 170 481 91 528 91C581 91 594 180 630 180" fill="none" stroke="#0B6B3A" stroke-width="58" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="70" y="190" fill="#66716A" font-family="DM Sans, Arial, sans-serif" font-size="14">16 px</text>
+  </g>
+</svg>

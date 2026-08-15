@@ -1,0 +1,48 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  lang?: 'en' | 'vi';
+  alternateHref?: string;
+}
+
+const { title, description, lang = 'en', alternateHref } = Astro.props;
+
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0d1110" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'; object-src 'none'"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/social-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/social-card.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {alternateHref && <link rel="alternate" hreflang={lang === 'en' ? 'vi' : 'en'} href={alternateHref} />}
+    <title>{title}</title>
+    <script is:inline src="/scripts/site.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">{lang === 'vi' ? 'Chuyển đến nội dung chính' : 'Skip to main content'}</a>
+    <slot />
+  </body>
+</html>

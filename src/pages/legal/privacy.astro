@@ -1,0 +1,142 @@
+---
+import LegalDocument from '../../components/LegalDocument.astro';
+
+const toc = [
+  { href: '#scope', label: 'Scope' },
+  { href: '#information', label: 'Information' },
+  { href: '#use', label: 'How information is used' },
+  { href: '#permissions', label: 'Permissions' },
+  { href: '#advertising', label: 'Advertising' },
+  { href: '#sharing', label: 'Sharing' },
+  { href: '#retention', label: 'Retention and deletion' },
+  { href: '#security', label: 'Security and transfers' },
+  { href: '#children', label: 'Children' },
+  { href: '#choices', label: 'Your choices' },
+  { href: '#changes', label: 'Changes' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+
+<LegalDocument
+  title="Mobile App Privacy Policy · GreenHill Studio"
+  description="Privacy Policy for mobile applications published by GreenHill Studio."
+  heading="Mobile App Privacy Policy"
+  lede="This Privacy Policy explains how GreenHill Studio accesses, uses, stores, and shares information through its mobile applications."
+  effective="August 15, 2026"
+  updated="August 15, 2026"
+  {toc}
+>
+  <div slot="notice" class="legal-notice">
+    <strong>One policy for our apps.</strong>
+    This policy covers mobile applications published under the GreenHill Studio developer name. The permissions, data types, and services used by a particular app depend on its features.
+  </div>
+
+  <section class="legal-section" id="scope">
+    <h2>1. Scope and developer</h2>
+    <p>
+      This policy applies to mobile applications published under the GreenHill Studio developer name on Google Play or another app store, unless an app provides a separate privacy notice. Each app's store listing, Data safety section, permission explanations, and in-app disclosures supplement this policy. If an app-specific notice differs from this general policy, the more specific notice controls for that app and feature.
+    </p>
+  </section>
+
+  <section class="legal-section" id="information">
+    <h2>2. Information our apps may handle</h2>
+    <p>Depending on the app and the features you choose, an app may handle:</p>
+    <ul>
+      <li><strong>Content you provide:</strong> text, photos, videos, audio, files, project names, codes, translations, or other content you create, import, scan, capture, or save with an app.</li>
+      <li><strong>App data and preferences:</strong> settings, language, reminders, feature configuration, local history, and other metadata needed to operate the app.</li>
+      <li><strong>Device and technical information:</strong> device and app version, operating system, IP address, advertising or app-instance identifiers, consent choices, diagnostics, crash information, and interactions with ads or app features when collected by a service used in that app.</li>
+      <li><strong>Support information:</strong> information you choose to include when contacting GreenHill Studio or submitting a public support issue.</li>
+    </ul>
+    <p>
+      Many GreenHill Studio features are designed to process and store content on your device. Local processing does not by itself send that content to GreenHill Studio. If a feature uses a network service, cloud service, or third-party SDK, the app will disclose that behavior through its listing, permission flow, or an additional in-app notice where required.
+    </p>
+  </section>
+
+  <section class="legal-section" id="use">
+    <h2>3. How information is used</h2>
+    <p>Information is used only as reasonably necessary to:</p>
+    <ul>
+      <li>provide the features you request and remember your settings;</li>
+      <li>save, export, share, translate, scan, protect, or organize content;</li>
+      <li>send reminders or notifications you enable;</li>
+      <li>display, measure, and manage consent for ads in ad-supported apps;</li>
+      <li>diagnose failures, prevent abuse, maintain security, and improve reliability;</li>
+      <li>respond to support requests and comply with legal obligations.</li>
+    </ul>
+  </section>
+
+  <section class="legal-section" id="permissions">
+    <h2>4. Device permissions and sensitive capabilities</h2>
+    <p>An app requests only the permissions or Android capabilities needed for its features. Depending on the app, these may include:</p>
+    <ul>
+      <li><strong>Camera:</strong> to capture photos, video, or scan visual information when you start a camera-based feature.</li>
+      <li><strong>Photos, media, files, or audio:</strong> to open, create, save, or share content you select.</li>
+      <li><strong>Notifications:</strong> to deliver reminders, status updates, or ongoing-operation controls that you enable.</li>
+      <li><strong>Microphone:</strong> for a recording, speech, or translation feature that you actively use.</li>
+      <li><strong>Screen capture, display over other apps, accessibility, or input method access:</strong> only in apps whose core features require on-screen, translation, automation, or keyboard functionality. Such access is explained in the relevant app before it is enabled.</li>
+    </ul>
+    <p>You can deny or revoke permissions in Android settings, although the related feature may stop working. A permission grant does not mean every covered app uses that permission.</p>
+  </section>
+
+  <section class="legal-section" id="advertising">
+    <h2>5. Advertising, analytics, and third-party services</h2>
+    <p>
+      Some GreenHill Studio apps are supported by advertising and may use Google Mobile Ads and Google's User Messaging Platform. Depending on your region, settings, consent choices, and the ad served, Google and its partners may process device and app information, IP address, advertising identifiers, consent choices, ad interactions, and diagnostic data to deliver and measure ads, prevent fraud, maintain security, and comply with legal obligations.
+    </p>
+    <p>
+      An app may also use store, crash-reporting, analytics, translation, speech, or other service providers when needed for disclosed features. The exact providers used by an app must be reflected in that app's listing and Data safety information. Where required, the app provides a consent or privacy options entry point. Apps distributed without a particular service do not intentionally initialize that service.
+    </p>
+    <p>
+      Learn more in <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google uses information from sites or apps that use its services</a>.
+    </p>
+  </section>
+
+  <section class="legal-section" id="sharing">
+    <h2>6. When information is shared</h2>
+    <p>GreenHill Studio does not sell your personal or sensitive user data.</p>
+    <p>Information may leave the app only in these circumstances:</p>
+    <ul>
+      <li>when you direct an app to export, open, translate, process, or share content with another app or service;</li>
+      <li>when a disclosed service provider processes information on behalf of an app for advertising, consent, analytics, diagnostics, or a requested feature;</li>
+      <li>if disclosure is required to comply with applicable law, legal process, or a valid governmental request.</li>
+    </ul>
+  </section>
+
+  <section class="legal-section" id="retention">
+    <h2>7. Data retention and deletion</h2>
+    <p>App-private content and preferences normally remain on your device until you delete them, clear the app's storage, or uninstall the app. Exported copies are controlled by you and may remain in device storage or a destination service after local app data is deleted.</p>
+    <p>If an app offers an account or remote storage, it will provide app-specific retention and deletion information and any deletion method required by law or store policy. Third-party providers retain information according to their policies and your applicable settings or consent choices.</p>
+  </section>
+
+  <section class="legal-section" id="security">
+    <h2>8. Security and international processing</h2>
+    <p>GreenHill Studio apps use Android protections such as app-private storage and platform permission controls where appropriate. Third-party services may process information in countries other than the one where you live. No method of storage or transmission is completely secure, so absolute security cannot be guaranteed.</p>
+  </section>
+
+  <section class="legal-section" id="children">
+    <h2>9. Children's privacy</h2>
+    <p>GreenHill Studio apps are not directed to children under 13 unless a specific store listing expressly says otherwise. GreenHill Studio does not knowingly collect a child's personal information through its own account or cloud service without the notices and consent required by applicable law. If you believe a child has submitted information directly to GreenHill Studio, contact us so the matter can be reviewed.</p>
+  </section>
+
+  <section class="legal-section" id="choices">
+    <h2>10. Your choices and rights</h2>
+    <p>Depending on your device and region, you can:</p>
+    <ul>
+      <li>deny or revoke app permissions and special access in Android settings;</li>
+      <li>disable optional features and manage advertising privacy choices where offered;</li>
+      <li>delete local content or all app data;</li>
+      <li>control exported copies from the destination where you saved them;</li>
+      <li>submit a privacy inquiry through the contact mechanism below.</li>
+    </ul>
+  </section>
+
+  <section class="legal-section" id="changes">
+    <h2>11. Changes to this policy</h2>
+    <p>This policy may be updated when an app's features, data practices, or legal obligations change. The effective date and last-updated date at the top of this page will be revised when material changes are published. The current version will remain available at this URL.</p>
+  </section>
+
+  <section class="legal-section" id="contact">
+    <h2>12. Contact GreenHill Studio</h2>
+    <p>For privacy questions or requests, submit a private-data-free inquiry through the <a href="https://github.com/haqt2003/greenhill-studio-legal/issues" target="_blank" rel="noopener noreferrer">GreenHill Studio legal support page</a>. Do not include photos, device identifiers, or other sensitive personal information in a public issue.</p>
+  </section>
+</LegalDocument>

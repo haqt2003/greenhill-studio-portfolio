@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { projects, type Locale } from '../data/projects';
+
+const locale: Locale = Astro.url.pathname.startsWith('/vi') ? 'vi' : 'en';
+const isVi = locale === 'vi';
+const title = isVi ? 'Các dự án — GreenHill Studio' : 'Projects — GreenHill Studio';
+const description = isVi
+  ? 'Xem những ứng dụng và website GreenHill Studio đã tham gia thiết kế và phát triển.'
+  : 'A look at the mobile apps and websites GreenHill Studio has helped design and build.';
+---
+
+<BaseLayout title={title} description={description} lang={locale} alternateHref={isVi ? '/projects/' : '/vi/projects/'}>
+  <Header locale={locale} onHome={false} alternateHref={isVi ? '/projects/' : '/vi/projects/'} />
+  <main id="main-content" class="projects-page">
+    <section class="shell projects-page-hero" data-reveal>
+      <a class="back-link" href={isVi ? '/vi/' : '/'}><span aria-hidden="true">←</span>{isVi ? 'Về trang chủ' : 'Back to home'}</a>
+      <p class="eyebrow">{isVi ? 'Tất cả dự án' : 'All projects'}</p>
+      <h1>{isVi ? 'Một vài sản phẩm chúng tôi đã cùng làm.' : 'A few products we have worked on.'}</h1>
+      <p>{isVi ? 'Mỗi dự án bắt đầu từ một nhu cầu cụ thể. Cách làm có thể khác nhau, nhưng mục tiêu luôn là tạo ra một sản phẩm dễ dùng và dễ duy trì.' : 'Each project starts with a specific need. The approach may change, but the goal is always a product that is easy to use and maintain.'}</p>
+    </section>
+    <section class="shell projects-page-list" aria-label={isVi ? 'Tất cả dự án' : 'All projects'}>
+      <div class="projects-grid">{projects.map((project, index) => <ProjectCard project={project} index={index} locale={locale} />)}</div>
+    </section>
+  </main>
+  <Footer locale={locale} onHome={false} />
+</BaseLayout>

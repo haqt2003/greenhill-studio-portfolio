@@ -1,0 +1,259 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { projects, type Locale } from '../data/projects';
+
+const locale: Locale = Astro.url.pathname.startsWith('/vi') ? 'vi' : 'en';
+const isVi = locale === 'vi';
+
+const copy = isVi ? {
+  title: 'GreenHill Studio — Thiết kế và phát triển sản phẩm số',
+  description: 'GreenHill Studio là nhóm thiết kế và phát triển sản phẩm tại Việt Nam, xây dựng ứng dụng di động và website từ ý tưởng ban đầu đến sản phẩm hoàn chỉnh.',
+  heroLabel: 'Thiết kế & phát triển sản phẩm số',
+  heroTitle: 'Biến ý tưởng thành sản phẩm thực tế.',
+  heroCopy: 'Từ định hướng ban đầu đến trải nghiệm hoàn chỉnh, chúng tôi đồng hành cùng bạn để tạo nên một sản phẩm nhất quán trên mobile và web.',
+  explore: 'Xem các dự án',
+  tellUs: 'Kể chúng tôi nghe',
+  wayOfWorking: 'Điều chúng tôi coi trọng',
+  proof: ['Giải quyết đúng nhu cầu', 'Bảo vệ quyền riêng tư', 'Sẵn sàng phát triển lâu dài'],
+  workEyebrow: 'Dự án',
+  workTitle: 'Mỗi dự án là một bài toán khác nhau.',
+  workCopy: 'Dưới đây là một số sản phẩm chúng tôi đã đồng hành từ những bước đầu tiên đến khi hoàn thiện.',
+  viewAll: 'Xem toàn bộ dự án',
+  serviceEyebrow: 'Chúng tôi có thể giúp gì',
+  serviceTitle: 'Cùng bạn đưa ý tưởng thành một sản phẩm hoàn thiện.',
+  serviceCopy: 'Thiết kế và kỹ thuật được làm song song, nên sản phẩm giữ được một hướng rõ ràng từ đầu đến cuối.',
+  aboutEyebrow: 'Về GreenHill',
+  aboutTitle: 'Làm việc trực tiếp, phối hợp rõ ràng.',
+  aboutP1: 'Chúng tôi quan tâm đến cả trải nghiệm lẫn cách sản phẩm được xây dựng. Mỗi quyết định đều bắt đầu từ một câu hỏi đơn giản: điều này có thực sự giúp người dùng không?',
+  aboutP2: 'Quy trình được giữ gọn và minh bạch để việc trao đổi nhanh chóng, không qua nhiều tầng trung gian. Người hiểu bài toán cũng trực tiếp tham gia thiết kế và phát triển sản phẩm.',
+  workWithUs: 'Trao đổi về dự án',
+  fieldNotes: 'Giá trị cốt lõi',
+  quote: '“Rõ ràng trong cách nghĩ, chỉn chu trong từng chi tiết.”',
+  principles: ['Nhìn đúng vào bài toán', 'Đặt trải nghiệm người dùng lên hàng đầu', 'Chỉn chu từ đầu đến cuối'],
+  processEyebrow: 'Quy trình',
+  processTitle: 'Mọi thứ bắt đầu bằng một cuộc trao đổi rõ ràng.',
+  contactEyebrow: 'Cùng trò chuyện',
+  contactTitle: 'Bạn đang muốn làm một sản phẩm mới?',
+  contactCopy: 'Hãy chia sẻ vài dòng về ý tưởng, tình trạng hiện tại và điều bạn cần hỗ trợ. Chúng tôi sẽ trả lời qua email.',
+  nameLabel: 'Tên',
+  namePlaceholder: 'Nguyễn Minh Anh',
+  emailLabel: 'Email',
+  emailPlaceholder: 'ban@example.com',
+  projectLabel: 'Loại dự án',
+  projectPlaceholder: 'Chọn loại dự án',
+  projectOptions: ['Ứng dụng di động', 'Website', 'Thiết kế sản phẩm', 'Hợp tác khác'],
+  messageLabel: 'Vài dòng về dự án',
+  messagePlaceholder: 'Bạn đang muốn giải quyết vấn đề gì, dự án đã đến đâu và cần chúng tôi hỗ trợ phần nào?',
+  submit: 'Gửi tin nhắn',
+} : {
+  title: 'GreenHill Studio — Digital products for mobile and web',
+  description: 'GreenHill Studio is a Vietnam-based design and development team building mobile apps and websites from early ideas to finished products.',
+  heroLabel: 'Digital product design & development',
+  heroTitle: 'We turn ideas into real products.',
+  heroCopy: 'From the first direction-setting conversations to the finished experience, we work alongside you to create a consistent product across mobile and web.',
+  explore: 'See our work',
+  tellUs: 'Tell us about your idea',
+  wayOfWorking: 'What matters to us',
+  proof: ['Solves the right need', 'Protects privacy', 'Ready to grow over time'],
+  workEyebrow: 'Our work',
+  workTitle: 'Different projects, different problems to solve.',
+  workCopy: 'Here are a few products we have supported from the earliest steps through to completion.',
+  viewAll: 'View all projects',
+  serviceEyebrow: 'What we can help with',
+  serviceTitle: 'We help turn an idea into a finished product.',
+  serviceCopy: 'Design and development move together, so the product stays consistent from start to finish.',
+  aboutEyebrow: 'About GreenHill',
+  aboutTitle: 'Direct collaboration, clear communication.',
+  aboutP1: 'We care about both the experience and how the product is built. Every decision starts with a simple question: does this genuinely help the person using it?',
+  aboutP2: 'We keep the process lean and transparent, so conversations move quickly without unnecessary layers. The people who understand the problem are directly involved in designing and building the product.',
+  workWithUs: 'Talk about a project',
+  fieldNotes: 'Core values',
+  quote: '“Clear in our thinking, thoughtful in every detail.”',
+  principles: ['Focus on the right problem', 'Put the user experience first', 'Carry the work through with care'],
+  processEyebrow: 'How we work',
+  processTitle: 'Everything starts with a clear conversation.',
+  contactEyebrow: 'Let’s talk',
+  contactTitle: 'Planning something new?',
+  contactCopy: 'Share a little about the idea, where things stand and what you need help with. We will reply by email.',
+  nameLabel: 'Name',
+  namePlaceholder: 'Alex Nguyen',
+  emailLabel: 'Email',
+  emailPlaceholder: 'you@example.com',
+  projectLabel: 'Project type',
+  projectPlaceholder: 'Choose a project type',
+  projectOptions: ['Mobile app', 'Website', 'Product design', 'Other collaboration'],
+  messageLabel: 'A few words about the project',
+  messagePlaceholder: 'What problem are you trying to solve, how far along is the project and where could we help?',
+  submit: 'Send message',
+};
+
+const services = isVi ? [
+  { number: '01', title: 'Định hình ý tưởng', copy: 'Cùng bạn làm rõ vấn đề, chọn những tính năng cần thiết và sắp xếp trải nghiệm trước khi bắt tay vào xây dựng.', tags: ['Tìm hiểu nhu cầu', 'Thiết kế kiến trúc', 'Bản mẫu'] },
+  { number: '02', title: 'Ứng dụng mobile', copy: 'Thiết kế và phát triển ứng dụng cho iOS, Android hoặc đa nền tảng, phù hợp với cách mọi người thực sự sử dụng điện thoại.', tags: ['iOS & Android', 'Native', 'Đa nền tảng'] },
+  { number: '03', title: 'Website', copy: 'Website nhanh, dễ dùng trên mọi màn hình và có cấu trúc đủ gọn để cập nhật, mở rộng về sau.', tags: ['Responsive', 'Hệ thống thiết kế', 'SEO'] },
+] : [
+  { number: '01', title: 'Shaping the idea', copy: 'We help define the problem, choose what matters and map the experience before development begins.', tags: ['Research', 'Architecture design', 'Prototypes'] },
+  { number: '02', title: 'Mobile apps', copy: 'We design and build for iOS, Android or cross-platform, with attention to how people actually use their phones.', tags: ['iOS & Android', 'Native', 'Cross-platform'] },
+  { number: '03', title: 'Websites', copy: 'Fast, responsive websites with a clear structure that is easy to update and grow.', tags: ['Responsive', 'Design systems', 'SEO'] },
+];
+
+const process = isVi ? [
+  ['Trao đổi', 'Hiểu mục tiêu, người dùng, những gì đã có và điều cần ưu tiên.'],
+  ['Lên ý tưởng', 'Xác định kiến trúc sản phẩm, các luồng hệ thống và hướng thiết kế phù hợp.'],
+  ['Thực hiện', 'Thiết kế, phát triển và kiểm thử đầy đủ theo phạm vi đã thống nhất.'],
+  ['Hoàn thiện', 'Rà soát từng chi tiết, tối ưu trải nghiệm, bàn giao và tiếp tục cải thiện khi cần.'],
+] : [
+  ['Talk', 'We clarify the goal, the people using the product, the current situation and the priorities.'],
+  ['Shape the idea', 'We define the product architecture, system flows and design direction.'],
+  ['Build', 'We design, develop and test everything agreed within the project scope.'],
+  ['Refine', 'We review every detail, improve the experience, prepare the handover and continue refining when needed.'],
+];
+---
+
+<BaseLayout title={copy.title} description={copy.description} lang={locale} alternateHref={isVi ? '/' : '/vi/'}>
+  <div id="top"></div>
+  <Header locale={locale} alternateHref={isVi ? '/' : '/vi/'} />
+
+  <main id="main-content">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy" data-reveal>
+        <p class="eyebrow">{copy.heroLabel}</p>
+        <h1 id="hero-title">
+          {isVi ? <>Biến ý tưởng thành <em>sản phẩm thực tế.</em></> : <>We turn ideas into <em>real products.</em></>}
+        </h1>
+        <p class="hero-lede">{copy.heroCopy}</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#work">{copy.explore} <span aria-hidden="true">↓</span></a>
+          <a class="button button-quiet" href="#contact">{copy.tellUs} <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-label={isVi ? 'Cùng một thiết kế GreenHill hiển thị trên laptop và điện thoại' : 'The same GreenHill design shown on a laptop and phone'} data-reveal>
+        <div class="hero-laptop" aria-hidden="true">
+          <div class="hero-device-screen">
+            <div class="hero-screen-top">
+              <span class="hero-screen-nav"></span>
+            </div>
+            <div class="hero-screen-copy"><i></i><i></i></div>
+            <div class="hero-screen-cards"><i></i><i></i><i></i></div>
+            <div class="hero-screen-hills"><i></i><i></i></div>
+          </div>
+        </div>
+        <div class="hero-phone" aria-hidden="true">
+          <div class="hero-device-screen">
+            <div class="hero-screen-top">
+              <span class="hero-screen-nav"></span>
+            </div>
+            <div class="hero-screen-copy"><i></i><i></i></div>
+            <div class="hero-screen-cards"><i></i><i></i><i></i></div>
+            <div class="hero-screen-hills"><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-proof" data-reveal>
+        <p>{copy.wayOfWorking}</p>
+        <div class="proof-list">{copy.proof.map((item, index) => <span><i>0{index + 1}</i>{item}</span>)}</div>
+      </div>
+    </section>
+
+    <section id="work" class="section shell">
+      <SectionHeading eyebrow={copy.workEyebrow} title={copy.workTitle} copy={copy.workCopy} />
+      <div class="projects-grid">{projects.map((project, index) => <ProjectCard project={project} index={index} locale={locale} />)}</div>
+      <div class="view-all-row" data-reveal>
+        <a class="button button-quiet" href={isVi ? '/vi/projects/' : '/projects/'}>{copy.viewAll} <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section id="services" class="section section-services">
+      <div class="shell">
+        <SectionHeading eyebrow={copy.serviceEyebrow} title={copy.serviceTitle} copy={copy.serviceCopy} />
+        <div class="services-list">
+          {services.map((service) => <article class="service-row" data-reveal><span class="service-number">{service.number}</span><h3>{service.title}</h3><p>{service.copy}</p><ul>{service.tags.map((tag) => <li>{tag}</li>)}</ul></article>)}
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section shell about-grid">
+      <div class="about-copy" data-reveal>
+        <p class="eyebrow">{copy.aboutEyebrow}</p><h2>{copy.aboutTitle}</h2><p>{copy.aboutP1}</p><p>{copy.aboutP2}</p>
+        <a class="text-link" href="#contact">{copy.workWithUs} <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="principles-card" data-reveal>
+        <div class="principles-top"><p>{copy.fieldNotes}</p></div>
+        <blockquote>{copy.quote}</blockquote>
+        <div class="principle-list">{copy.principles.map((item, index) => <><span>0{index + 1}</span><p>{item}</p></>)}</div>
+        <svg class="contour-lines" viewBox="0 0 540 240" aria-hidden="true"><path d="M-30 190c88-84 153-93 218-39 73 61 111 41 164-21 60-69 127-60 219 19" /><path d="M-23 218c89-86 159-95 226-38 68 58 108 41 162-20 61-68 130-59 211 8" /><path d="M-8 245c88-83 158-88 222-34 63 53 104 39 157-18 63-67 130-58 210 4" /></svg>
+      </div>
+    </section>
+
+    <section class="section process shell">
+      <SectionHeading eyebrow={copy.processEyebrow} title={copy.processTitle} />
+      <ol class="process-list">{process.map((item, index) => <li data-reveal><span>0{index + 1}</span><div><h3>{item[0]}</h3><p>{item[1]}</p></div></li>)}</ol>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="shell contact-card" data-reveal>
+        <div class="contact-copy">
+          <p class="eyebrow">{copy.contactEyebrow}</p>
+          <h2>{copy.contactTitle}</h2>
+          <p>{copy.contactCopy}</p>
+        </div>
+        <form
+          class="contact-form"
+          action="/api/contact"
+          method="post"
+          autocomplete="on"
+          data-contact-form
+          data-contact-endpoint="/api/contact"
+          data-locale={locale}
+        >
+          <div class="contact-field-row">
+            <label class="contact-field">
+              <span>{copy.nameLabel}</span>
+              <input name="name" type="text" autocomplete="name" maxlength="80" placeholder={copy.namePlaceholder} required />
+            </label>
+            <label class="contact-field">
+              <span>{copy.emailLabel}</span>
+              <input name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" placeholder={copy.emailPlaceholder} required />
+            </label>
+          </div>
+          <label class="contact-field">
+            <span>{copy.projectLabel}</span>
+            <select name="projectType" required>
+              <option value="" selected disabled>{copy.projectPlaceholder}</option>
+              {copy.projectOptions.map((option) => <option value={option}>{option}</option>)}
+            </select>
+          </label>
+          <label class="contact-field">
+            <span>{copy.messageLabel}</span>
+            <textarea name="message" rows="5" minlength="20" maxlength="2000" placeholder={copy.messagePlaceholder} required></textarea>
+          </label>
+          <div class="form-trap" aria-hidden="true">
+            <label>Website<input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
+          </div>
+          <div class="form-actions">
+            <button class="button button-light" type="submit">
+              {copy.submit}
+              <svg class="button-icon" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M4 10h12M11 5l5 5-5 5" />
+              </svg>
+            </button>
+            <p class="form-status" id={`contact-status-${locale}`} aria-live="polite" data-form-status></p>
+          </div>
+        </form>
+        <div class="contact-mark" aria-hidden="true">
+          <svg viewBox="0 0 560 320">
+            <path class="contact-cloud-body" d="M128 286c-68 0-110-42-110-98 0-51 39-92 91-97C132 42 182 10 241 10c70 0 127 43 145 104 13-5 27-7 42-7 67 0 114 49 114 109 0 40-25 70-70 70H128Z" />
+          </svg>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer locale={locale} />
+</BaseLayout>

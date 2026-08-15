@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+
+interface TocItem {
+  href: string;
+  label: string;
+}
+
+interface Props {
+  locale?: 'en' | 'vi';
+  alternateHref?: string;
+  title: string;
+  description: string;
+  heading: string;
+  lede: string;
+  effective: string;
+  updated: string;
+  toc: TocItem[];
+}
+
+const {
+  locale = 'en',
+  alternateHref = locale === 'vi' ? '/legal/' : '/vi/legal/',
+  title,
+  description,
+  heading,
+  lede,
+  effective,
+  updated,
+  toc,
+} = Astro.props;
+const isVi = locale === 'vi';
+---
+
+<BaseLayout title={title} description={description} lang={locale} {alternateHref}>
+  <div id="top"></div>
+  <Header {locale} onHome={false} {alternateHref} />
+
+  <main id="main-content" class="legal-page shell">
+    <section class="legal-hero" aria-labelledby="legal-title">
+      <a class="legal-back" href={isVi ? '/vi/legal/' : '/legal/'}>← {isVi ? 'Tổng quan pháp lý' : 'Legal overview'}</a>
+      <p class="eyebrow">{isVi ? 'Tài liệu pháp lý' : 'Legal document'}</p>
+      <h1 id="legal-title">{heading}</h1>
+      <p class="legal-lede">{lede}</p>
+      <div class="legal-meta">
+        <span>{isVi ? `Có hiệu lực từ ${effective}` : `Effective ${effective}`}</span>
+        <span>{isVi ? `Cập nhật lần cuối ${updated}` : `Last updated ${updated}`}</span>
+      </div>
+    </section>
+
+    <slot name="notice" />
+
+    <div class="legal-layout">
+      <aside class="legal-toc" aria-label="On this page">
+        <strong>{isVi ? 'Trong trang này' : 'On this page'}</strong>
+        {toc.map((item) => <a href={item.href}>{item.label}</a>)}
+      </aside>
+      <article class="legal-content">
+        <slot />
+      </article>
+    </div>
+  </main>
+
+  <Footer {locale} onHome={false} />
+</BaseLayout>

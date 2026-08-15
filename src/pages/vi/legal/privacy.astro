@@ -1,0 +1,75 @@
+---
+import LegalDocument from '../../../components/LegalDocument.astro';
+
+const toc = [
+  { href: '#scope', label: 'Phạm vi áp dụng' },
+  { href: '#information', label: 'Thông tin được tiếp nhận' },
+  { href: '#use', label: 'Mục đích sử dụng' },
+  { href: '#sharing', label: 'Nhà cung cấp dịch vụ' },
+  { href: '#storage', label: 'Lưu trữ trên trình duyệt' },
+  { href: '#retention', label: 'Lưu giữ và bảo mật' },
+  { href: '#rights', label: 'Lựa chọn của bạn' },
+  { href: '#changes', label: 'Thay đổi và liên hệ' },
+];
+---
+
+<LegalDocument
+  locale="vi"
+  alternateHref="/legal/site-privacy/"
+  title="Chính sách quyền riêng tư của website · GreenHill Studio"
+  description="Chính sách quyền riêng tư dành cho website portfolio và biểu mẫu liên hệ của GreenHill Studio."
+  heading="Chính sách quyền riêng tư của website"
+  lede="Chính sách này giải thích website portfolio tiếp nhận thông tin nào, vì sao cần thông tin đó và bạn có những lựa chọn gì."
+  effective="ngày 15 tháng 8 năm 2026"
+  updated="ngày 15 tháng 8 năm 2026"
+  {toc}
+>
+  <div slot="notice" class="legal-notice">
+    <strong>Chính sách này chỉ áp dụng cho website portfolio.</strong>
+    Chính sách dành cho ứng dụng di động được giữ tại các URL riêng và áp dụng trực tiếp cho những ứng dụng tương ứng.
+  </div>
+
+  <section class="legal-section" id="scope">
+    <h2>1. Phạm vi áp dụng và đơn vị chịu trách nhiệm</h2>
+    <p>Chính sách này áp dụng cho website portfolio GreenHill Studio, bao gồm các trang dự án và biểu mẫu liên hệ. GreenHill Studio chịu trách nhiệm đối với thông tin được gửi qua website. Chính sách không áp dụng cho website của bên thứ ba hoặc các ứng dụng di động GreenHill Studio vốn có chính sách riêng.</p>
+  </section>
+
+  <section class="legal-section" id="information">
+    <h2>2. Thông tin website tiếp nhận</h2>
+    <p>Khi sử dụng biểu mẫu liên hệ, bạn cung cấp tên, địa chỉ email, loại dự án và nội dung tin nhắn. Vui lòng không gửi mật khẩu, thông tin thanh toán, giấy tờ định danh, dữ liệu sức khỏe hoặc thông tin nhạy cảm khác.</p>
+    <p>Hệ thống liên hệ tạm thời sử dụng địa chỉ mạng của bạn để hạn chế gửi tự động hoặc gửi lặp lại. Nhà cung cấp dịch vụ lưu trữ cũng có thể xử lý thông tin kết nối tiêu chuẩn như địa chỉ IP, loại trình duyệt, trang được yêu cầu và thời điểm truy cập để vận hành và bảo vệ website.</p>
+  </section>
+
+  <section class="legal-section" id="use">
+    <h2>3. Thông tin được sử dụng như thế nào</h2>
+    <p>Thông tin liên hệ được dùng để đọc và trả lời yêu cầu của bạn qua email, hiểu loại dự án bạn đang cân nhắc, ngăn chặn hành vi lạm dụng, đồng thời duy trì độ an toàn và ổn định của website. Thông tin không được bán cho mục đích quảng cáo và không được dùng để ra quyết định tự động.</p>
+  </section>
+
+  <section class="legal-section" id="sharing">
+    <h2>4. Gửi email, lưu trữ và liên kết ngoài</h2>
+    <p>Tin nhắn từ biểu mẫu được chuyển qua Resend, nhà cung cấp dịch vụ gửi email, rồi gửi đến hộp thư riêng của GreenHill Studio. Nhà cung cấp dịch vụ lưu trữ xử lý các yêu cầu cần thiết để vận hành và bảo vệ website. Các đơn vị này xử lý thông tin theo điều khoản và cam kết quyền riêng tư của họ.</p>
+    <p>Portfolio có liên kết đến GitHub và website dự án của bên thứ ba. Những website đó chỉ nhận thông tin khi bạn chủ động mở liên kết và chính sách riêng của họ sẽ được áp dụng.</p>
+  </section>
+
+  <section class="legal-section" id="storage">
+    <h2>5. Cookie và dữ liệu lưu trên trình duyệt</h2>
+    <p>Website hiện không sử dụng quảng cáo, công cụ theo dõi phân tích hoặc cookie tiếp thị. Sau khi gửi biểu mẫu, trình duyệt lưu một mốc thời gian ngắn trong session storage để tránh gửi lặp ngoài ý muốn. Dữ liệu này mất đi khi phiên trình duyệt kết thúc và không được dùng để nhận diện bạn trên các website khác.</p>
+  </section>
+
+  <section class="legal-section" id="retention">
+    <h2>6. Thời gian lưu giữ và bảo mật</h2>
+    <p>Tin nhắn liên hệ có thể được giữ trong hộp thư nhận trong khoảng thời gian hợp lý để trả lời, trao đổi về dự án, lưu hồ sơ công việc hoặc đáp ứng nghĩa vụ pháp lý. Bạn có thể yêu cầu GreenHill Studio xóa tin nhắn, trừ trường hợp cần tiếp tục lưu giữ vì lý do pháp lý hoặc an toàn chính đáng.</p>
+    <p>Website kiểm tra và giới hạn dữ liệu trong từng trường, chỉ chấp nhận yêu cầu từ đúng nguồn website đã cấu hình, áp dụng giới hạn tần suất và chỉ gửi email dạng văn bản. Không phương thức truyền hoặc lưu trữ trực tuyến nào có thể được đảm bảo an toàn tuyệt đối.</p>
+  </section>
+
+  <section class="legal-section" id="rights">
+    <h2>7. Lựa chọn và quyền của bạn</h2>
+    <p>Bạn có thể xem portfolio mà không cần gửi biểu mẫu liên hệ. Bạn có thể hỏi GreenHill Studio đang giữ thông tin liên hệ nào về mình, yêu cầu sửa thông tin hoặc yêu cầu xóa khi phù hợp. Quyền cụ thể phụ thuộc nơi bạn sinh sống và có thể chịu những ngoại lệ hợp pháp.</p>
+  </section>
+
+  <section class="legal-section" id="changes">
+    <h2>8. Thay đổi chính sách và cách liên hệ</h2>
+    <p>Chính sách có thể được cập nhật khi website, nhà cung cấp dịch vụ hoặc yêu cầu pháp lý thay đổi. Phiên bản mới nhất luôn được đăng tại URL này kèm ngày cập nhật.</p>
+    <p>Nếu có câu hỏi hoặc yêu cầu về quyền riêng tư, hãy sử dụng <a href="/vi/#contact">biểu mẫu liên hệ trên portfolio</a>. Không gửi thông tin nhạy cảm trong tin nhắn.</p>
+  </section>
+</LegalDocument>

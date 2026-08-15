@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1120" role="img" aria-labelledby="title desc">
+  <title id="title">GreenHill Studio continuous-hill logo directions</title>
+  <desc id="desc">Six stronger logo ideas developed from one continuous line forming two hills.</desc>
+  <rect width="1600" height="1120" fill="#F4F6F4"/>
+
+  <text x="80" y="82" fill="#0D1110" font-family="DM Sans, Arial, sans-serif" font-size="34" font-weight="700">Phát triển từ một nét đồi liên tục</text>
+  <text x="80" y="122" fill="#657069" font-family="DM Sans, Arial, sans-serif" font-size="18">Giữ nguyên ẩn dụ · tăng độ nhận diện · không thêm chi tiết trang trí</text>
+
+  <g transform="translate(80 175)">
+    <rect width="700" height="390" rx="30" fill="#FFFFFF"/>
+    <text x="34" y="48" fill="#657069" font-family="DM Sans, Arial, sans-serif" font-size="16">01 · Nét đậm nguyên bản</text>
+    <path d="M65 256C126 256 158 142 239 142C314 142 335 247 389 247C440 247 466 175 510 175C559 175 571 256 605 256" fill="none" stroke="#0B6B3A" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="34" y="350" fill="#8A948E" font-family="DM Sans, Arial, sans-serif" font-size="14">Giữ đúng nhịp gốc, tăng lực thị giác.</text>
+  </g>
+
+  <g transform="translate(820 175)">
+    <rect width="700" height="390" rx="30" fill="#FFFFFF"/>
+    <text x="34" y="48" fill="#657069" font-family="DM Sans, Arial, sans-serif" font-size="16">02 · Cô đọng</text>
+    <path d="M112 265C164 265 191 137 264 137C334 137 348 248 399 248C445 248 468 169 510 169C554 169 564 265 594 265" fill="none" stroke="#0B6B3A" stroke-width="54" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="34" y="350" fill="#8A948E" font-family="DM Sans, Arial, sans-serif" font-size="14">Tỷ lệ gọn hơn, phù hợp favicon và avatar.</text>
+  </g>
+
+  <g transform="translate(80 605)">
+    <rect width="460" height="390" rx="30" fill="#FFFFFF"/>
+    <text x="34" y="48" fill="#657069" font-family="DM Sans, Arial, sans-serif" font-size="16">03 · Dải mềm</text>
+    <path d="M46 260C91 260 111 139 172 139C229 139 241 248 282 248C318 248 335 174 369 174C403 174 411 260 432 260" fill="none" stroke="#0B6B3A" stroke-width="68" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="34" y="350" fill="#8A948E" font-family="DM Sans, Arial, sans-serif" font-size="14">Khối nặng hơn, thân thiện và dễ nhớ.</text>
+  </g>
+
+  <g transform="translate(570 605)">
+    <rect width="460" height="390" rx="30" fill="#FFFFFF"/>
+    <text x="34" y="48" fill="#657069" font-family="DM Sans, Arial, sans-serif" font-size="16">04 · Đầu cắt</text>
+    <path d="M48 260C93 260 114 139 174 139C230 139 243 248 283 248C319 248 336 174 370 174C404 174 413 260 434 260" fill="none" stroke="#0B6B3A" stroke-width="54" stroke-linecap="butt" stroke-linejoin="round"/>
+    <text x="34" y="350" fill="#8A948E" font-family="DM Sans, Arial, sans-serif" font-size="14">Sắc hơn, thiên về công nghệ.</text>
+  </g>
+
+  <g transform="translate(1060 605)">
+    <rect width="460" height="390" rx="30" fill="#FFFFFF"/>
+    <text x="34" y="48" fill="#657069" font-family="DM Sans, Arial, sans-serif" font-size="16">05 · Nhịp tiến</text>
+    <path d="M46 270C91 270 111 178 167 178C224 178 236 255 278 255C316 255 334 132 374 132C414 132 419 270 438 270" fill="none" stroke="#0B6B3A" stroke-width="55" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="34" y="350" fill="#8A948E" font-family="DM Sans, Arial, sans-serif" font-size="14">Ngọn sau cao hơn, gợi chuyển động đi lên.</text>
+  </g>
+
+  <g transform="translate(80 1030)">
+    <text x="0" y="0" fill="#657069" font-family="DM Sans, Arial, sans-serif" font-size="16">06 · Không gian âm — hướng thử nghiệm mạnh hơn</text>
+    <rect x="560" y="-70" width="640" height="125" rx="62" fill="#0B6B3A"/>
+    <path d="M615 7C670 7 697-53 756-53C812-53 827 2 869 2C906 2 925-38 959-38C998-38 1007 7 1040 7" fill="none" stroke="#F4F6F4" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

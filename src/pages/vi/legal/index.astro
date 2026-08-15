@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Pháp lý · GreenHill Studio"
+  description="Chính sách quyền riêng tư và điều khoản sử dụng dành cho website portfolio GreenHill Studio."
+  lang="vi"
+  alternateHref="/legal/"
+>
+  <div id="top"></div>
+  <Header locale="vi" onHome={false} alternateHref="/legal/" />
+
+  <main id="main-content" class="legal-page shell">
+    <section class="legal-hero legal-overview-hero" aria-labelledby="legal-title">
+      <p class="eyebrow">Pháp lý GreenHill Studio</p>
+      <h1 id="legal-title">Thông tin rõ ràng khi sử dụng website.</h1>
+      <p class="legal-lede">
+        Các tài liệu dưới đây giải thích cách portfolio xử lý thông tin liên hệ và những điều khoản áp dụng khi bạn truy cập hoặc sử dụng website.
+      </p>
+      <div class="legal-meta">
+        <span>Portfolio GreenHill Studio</span>
+        <span>Cập nhật lần cuối ngày 15 tháng 8 năm 2026</span>
+      </div>
+    </section>
+
+    <section class="legal-cards" aria-label="Tài liệu pháp lý">
+      <article class="legal-card">
+        <p class="eyebrow">Thông tin của bạn</p>
+        <h2>Chính sách quyền riêng tư</h2>
+        <p>Tìm hiểu website tiếp nhận thông tin nào, sử dụng ra sao và bạn có thể lựa chọn hoặc yêu cầu điều gì.</p>
+        <a class="text-link" href="/vi/legal/privacy/">Đọc chính sách <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="legal-card">
+        <p class="eyebrow">Sử dụng website</p>
+        <h2>Điều khoản sử dụng</h2>
+        <p>Những điều kiện áp dụng khi truy cập portfolio, xem nội dung, mở liên kết ngoài hoặc gửi yêu cầu liên hệ.</p>
+        <a class="text-link" href="/vi/legal/terms/">Đọc điều khoản <span aria-hidden="true">→</span></a>
+      </article>
+    </section>
+  </main>
+
+  <Footer locale="vi" onHome={false} />
+</BaseLayout>

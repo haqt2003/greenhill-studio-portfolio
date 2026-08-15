@@ -1,0 +1,68 @@
+---
+import LegalDocument from '../../components/LegalDocument.astro';
+
+const toc = [
+  { href: '#acceptance', label: 'Acceptance' },
+  { href: '#purpose', label: 'Website purpose' },
+  { href: '#content', label: 'Content and ownership' },
+  { href: '#enquiries', label: 'Contact enquiries' },
+  { href: '#links', label: 'External links' },
+  { href: '#availability', label: 'Availability' },
+  { href: '#liability', label: 'Liability' },
+  { href: '#changes', label: 'Changes and contact' },
+];
+---
+
+<LegalDocument
+  title="Website Terms of Use · GreenHill Studio"
+  description="Terms of Use for the GreenHill Studio portfolio website."
+  heading="Website Terms of Use"
+  lede="These terms apply when you visit the GreenHill Studio portfolio, use its content, follow its links, or send an enquiry."
+  effective="August 15, 2026"
+  updated="August 15, 2026"
+  alternateHref="/vi/legal/terms/"
+  {toc}
+>
+  <section class="legal-section" id="acceptance">
+    <h2>1. Acceptance</h2>
+    <p>By using this website, you agree to these Terms of Use. If you do not agree, please stop using the website. Mandatory consumer rights available where you live are not limited by these terms.</p>
+  </section>
+
+  <section class="legal-section" id="purpose">
+    <h2>2. Website purpose</h2>
+    <p>This portfolio presents GreenHill Studio's services, selected work, capabilities, and contact information. Its content is general information and does not by itself create a client relationship, binding proposal, warranty, or commitment to provide services.</p>
+  </section>
+
+  <section class="legal-section" id="content">
+    <h2>3. Content and intellectual property</h2>
+    <p>The website's original design, text, branding, illustrations, and code are owned by GreenHill Studio or used with permission. Project names, screenshots, logos, and materials belonging to clients or third parties remain the property of their respective owners.</p>
+    <p>You may view and share links to the website for lawful purposes. You may not copy, sell, republish, misrepresent, or commercially exploit substantial parts of the website without permission, except where applicable law allows it.</p>
+  </section>
+
+  <section class="legal-section" id="enquiries">
+    <h2>4. Contact form and project enquiries</h2>
+    <p>You are responsible for ensuring that information submitted through the contact form is accurate and that you have the right to share it. Do not submit unlawful material, malicious code, confidential credentials, payment data, or sensitive personal information.</p>
+    <p>An enquiry does not guarantee a reply, availability, pricing, acceptance of a project, or the formation of a contract. Any paid engagement will require separate agreement on scope, schedule, fees, ownership, and other relevant terms.</p>
+  </section>
+
+  <section class="legal-section" id="links">
+    <h2>5. Projects and external websites</h2>
+    <p>The portfolio may link to GitHub, client websites, and other third-party services. GreenHill Studio does not control their availability, security, content, or privacy practices. A link is provided for context and does not imply responsibility for everything on the destination website.</p>
+  </section>
+
+  <section class="legal-section" id="availability">
+    <h2>6. Accuracy and availability</h2>
+    <p>GreenHill Studio aims to keep the portfolio accurate and available, but information may become outdated and the website may be changed, interrupted, or removed without notice. The website is provided on an “as is” and “as available” basis to the extent permitted by law.</p>
+  </section>
+
+  <section class="legal-section" id="liability">
+    <h2>7. Limitation of liability</h2>
+    <p>To the maximum extent permitted by applicable law, GreenHill Studio is not liable for indirect or consequential loss arising solely from using or being unable to use this informational website, relying on outdated content, or visiting a third-party link. Nothing excludes liability or rights that cannot lawfully be excluded.</p>
+  </section>
+
+  <section class="legal-section" id="changes">
+    <h2>8. Changes and contact</h2>
+    <p>These terms may be revised when the website, services, or legal requirements change. The current version will be published at this URL with an updated date.</p>
+    <p>Questions about these terms can be sent through the <a href="/#contact">portfolio contact form</a>.</p>
+  </section>
+</LegalDocument>

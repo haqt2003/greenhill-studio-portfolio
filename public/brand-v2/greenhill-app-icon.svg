@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-labelledby="title">
+  <title id="title">GreenHill Studio app icon</title>
+  <rect width="320" height="320" rx="82" fill="#0D1110"/>
+  <path
+    d="M28 181C60 181 75 96 119 96C159 96 171 166 199 166C224 166 236 121 258 121C282 121 285 181 297 181"
+    fill="none"
+    stroke="#79D5A7"
+    stroke-width="28"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

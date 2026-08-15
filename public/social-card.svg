@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(234 70) rotate(57) scale(550 570)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3e8b64" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#0d1110" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#3a8f68"/><stop offset="1" stop-color="#79d5a7"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#a8ebc6" stroke-opacity=".05"/></pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#0d1110"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect x="84" y="78" width="68" height="68" rx="22" fill="url(#mark)"/>
+  <path d="m101 121 14-17 8 9 7-9 10 17m-31 6h23" fill="none" stroke="#07110c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="170" y="122" fill="#f3f7f4" font-family="Arial, sans-serif" font-size="28" font-weight="700">GreenHill Studio</text>
+  <text x="84" y="322" fill="#f3f7f4" font-family="Arial, sans-serif" font-size="78" font-weight="700" letter-spacing="-4">Mobile &amp; web</text>
+  <text x="84" y="408" fill="#a8ebc6" font-family="Georgia, serif" font-size="82" font-style="italic">products.</text>
+  <text x="88" y="508" fill="#aebbb3" font-family="Arial, sans-serif" font-size="24">Designed and built in Vietnam</text>
+  <path d="M780 520c90-170 196-242 340-250" fill="none" stroke="#79d5a7" stroke-opacity=".36" stroke-width="2"/>
+  <path d="M728 580c120-208 242-291 445-316" fill="none" stroke="#79d5a7" stroke-opacity=".18" stroke-width="2"/>
+</svg>

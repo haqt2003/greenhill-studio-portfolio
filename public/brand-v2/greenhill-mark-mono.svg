@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 240" role="img" aria-labelledby="title">
+  <title id="title">GreenHill Studio monochrome mark</title>
+  <path
+    d="M50 180C116 180 151 55 238 55C318 55 340 170 398 170C453 170 481 91 528 91C581 91 594 180 630 180"
+    fill="none"
+    stroke="#0D1110"
+    stroke-width="44"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

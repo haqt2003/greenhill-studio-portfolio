@@ -1,0 +1,67 @@
+---
+import type { Locale, Project } from '../data/projects';
+
+interface Props {
+  project: Project;
+  index: number;
+  locale: Locale;
+}
+
+const { project, index, locale } = Astro.props;
+const isVi = locale === 'vi';
+const projectTitle = project.title[locale];
+---
+
+<article class:list={['project-card', `project-${project.theme}`]} data-reveal>
+  <div class:list={['project-visual', !project.image && 'project-visual-pending']}>
+    {project.image?.presentation === 'laptop' ? (
+      <div class="project-laptop">
+        <div class="project-laptop-screen">
+          <img
+            class="project-image"
+            src={project.image.src}
+            alt={project.image.alt[locale]}
+            loading="lazy"
+            decoding="async"
+          />
+          <span class="project-laptop-camera" aria-hidden="true"></span>
+        </div>
+        <div class="project-laptop-base" aria-hidden="true"><span></span></div>
+      </div>
+    ) : project.image ? (
+      <img
+        class="project-image"
+        src={project.image.src}
+        alt={project.image.alt[locale]}
+        loading={index === 0 ? 'eager' : 'lazy'}
+        decoding="async"
+      />
+    ) : (
+      <div class="project-image-pending">
+        <strong>{projectTitle}</strong>
+        <span>{isVi ? 'Ảnh dự án sẽ được cập nhật khi có link.' : 'A project preview will be added when the link is ready.'}</span>
+      </div>
+    )}
+  </div>
+
+  <div class="project-content">
+    <div class="project-meta">
+      <span>{project.category[locale]}</span>
+      <span>{project.year}</span>
+    </div>
+    <h3>{projectTitle}</h3>
+    <p>{project.description[locale]}</p>
+    <ul class="project-tags" aria-label={isVi ? `Công nghệ dùng trong ${projectTitle}` : `Technology used in ${projectTitle}`}>
+      {project.tags.map((tag) => <li>{tag[locale]}</li>)}
+    </ul>
+    {project.href ? (
+      <a class="text-link" href={project.href} target="_blank" rel="noopener noreferrer">
+        {isVi ? 'Mở dự án' : 'Visit project'} <span aria-hidden="true">↗</span>
+      </a>
+    ) : (
+      <span class="text-link text-link-disabled">
+        {isVi ? 'Link dự án sẽ được cập nhật' : 'Project link will be added soon'}
+      </span>
+    )}
+  </div>
+</article>

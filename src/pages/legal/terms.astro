@@ -1,0 +1,110 @@
+---
+import LegalDocument from '../../components/LegalDocument.astro';
+
+const toc = [
+  { href: '#eligibility', label: 'Eligibility' },
+  { href: '#license', label: 'License' },
+  { href: '#content', label: 'Your content' },
+  { href: '#responsibilities', label: 'Responsibilities' },
+  { href: '#features', label: 'App features' },
+  { href: '#third-parties', label: 'Third parties' },
+  { href: '#ownership', label: 'Ownership' },
+  { href: '#disclaimers', label: 'Disclaimers' },
+  { href: '#liability', label: 'Liability' },
+  { href: '#termination', label: 'Termination' },
+  { href: '#changes', label: 'Changes' },
+  { href: '#law', label: 'Applicable law' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+
+<LegalDocument
+  title="Mobile App Terms of Use · GreenHill Studio"
+  description="Terms of Use for mobile applications published by GreenHill Studio."
+  heading="Mobile App Terms of Use"
+  lede="These Terms govern your use of mobile applications published under the GreenHill Studio developer name."
+  effective="August 15, 2026"
+  updated="August 15, 2026"
+  {toc}
+>
+  <div slot="notice" class="legal-notice">
+    By downloading, installing, or using a covered app, you agree to these Terms. If you do not agree, do not use the app.
+  </div>
+
+  <section class="legal-section" id="eligibility">
+    <h2>1. Eligibility and acceptance</h2>
+    <p>You must be legally able to agree to these Terms. If you are under the age at which you can enter into a binding agreement where you live, a parent or legal guardian must review and accept these Terms for you. You are responsible for complying with laws that apply to your use of the app.</p>
+  </section>
+
+  <section class="legal-section" id="license">
+    <h2>2. Limited license</h2>
+    <p>GreenHill Studio grants you a personal, limited, non-exclusive, non-transferable, revocable license to install and use a covered app for lawful, non-commercial purposes in accordance with these Terms and the rules of the app store from which you obtained it.</p>
+    <p>You may not sell, rent, sublicense, distribute, reverse engineer, bypass security or technical limits, interfere with normal operation, or use an app to violate another person's rights, except where applicable law expressly allows such activity.</p>
+  </section>
+
+  <section class="legal-section" id="content">
+    <h2>3. Your content and local data</h2>
+    <p>You retain ownership of photos, videos, audio, text, files, codes, project names, translations, and other content you create or store with an app. GreenHill Studio does not claim ownership of that content. You are responsible for ensuring you have the rights and any necessary consent to capture, store, process, export, or share it.</p>
+    <p>When you choose to share content with another app, person, or service, you direct that transfer and the recipient's terms and privacy practices apply.</p>
+  </section>
+
+  <section class="legal-section" id="responsibilities">
+    <h2>4. Acceptable use</h2>
+    <p>You agree not to use a GreenHill Studio app to:</p>
+    <ul>
+      <li>break any applicable law or regulation;</li>
+      <li>capture or share content unlawfully or without required permission;</li>
+      <li>harass, exploit, deceive, or harm another person;</li>
+      <li>introduce malicious code or interfere with the app or device security;</li>
+      <li>misrepresent your relationship with GreenHill Studio.</li>
+    </ul>
+  </section>
+
+  <section class="legal-section" id="features">
+    <h2>5. App features, results, and backups</h2>
+    <p>GreenHill Studio apps may provide utilities for creating, organizing, translating, scanning, authenticating, recording, reminding, or exporting content. Automated output, translations, generated media, codes, reminders, and other results may be incomplete, delayed, or inaccurate. You should verify important results and never rely on an app as the sole copy of essential data, credentials, recovery information, or media.</p>
+    <p>You are responsible for maintaining any backups you need before deleting content, clearing app data, resetting a device, or uninstalling an app. Features depend on your device, operating-system version, available storage, permissions, network, battery settings, and third-party components and may behave differently across devices.</p>
+    <p>Apps are general-purpose tools and are not a substitute for medical, legal, financial, emergency, or other professional advice.</p>
+  </section>
+
+  <section class="legal-section" id="third-parties">
+    <h2>6. Advertising and third-party services</h2>
+    <p>A covered app may display advertising or use services supplied by Google or other third parties. Those services are governed by their own terms and privacy policies. GreenHill Studio does not control third-party availability, content, or data practices and is not responsible for third-party services beyond what applicable law requires.</p>
+  </section>
+
+  <section class="legal-section" id="ownership">
+    <h2>7. GreenHill Studio property</h2>
+    <p>The apps, branding, interface, software, and related materials are owned by GreenHill Studio or its licensors and are protected by applicable intellectual property laws. These Terms do not transfer ownership of those materials to you. Open-source components remain subject to their respective licenses.</p>
+  </section>
+
+  <section class="legal-section" id="disclaimers">
+    <h2>8. Disclaimers</h2>
+    <p>To the maximum extent permitted by law, covered apps are provided “as is” and “as available,” without warranties of uninterrupted operation, error-free results, fitness for a particular purpose, merchantability, or non-infringement. GreenHill Studio does not guarantee that content can always be recovered or that notifications, translations, authenticator functions, exports, or other operations will always occur at a particular time or without error.</p>
+    <p>Nothing in these Terms excludes warranties or consumer rights that cannot be excluded under applicable law.</p>
+  </section>
+
+  <section class="legal-section" id="liability">
+    <h2>9. Limitation of liability</h2>
+    <p>To the maximum extent permitted by law, GreenHill Studio will not be liable for indirect, incidental, special, consequential, exemplary, or punitive damages, or for loss of data, profits, goodwill, or business opportunities arising from your use of or inability to use a covered app. Any limitation applies only to the extent allowed by applicable law.</p>
+  </section>
+
+  <section class="legal-section" id="termination">
+    <h2>10. Suspension and termination</h2>
+    <p>You may stop using an app at any time and uninstall it. GreenHill Studio may suspend or discontinue an app or your license to use it if reasonably needed for security, legal compliance, service changes, or a material breach of these Terms. Provisions that by their nature should survive termination will continue to apply.</p>
+  </section>
+
+  <section class="legal-section" id="changes">
+    <h2>11. App and Terms changes</h2>
+    <p>Features may be added, changed, or removed over time. These Terms may also be updated for product, legal, or security reasons. The revised version will be posted at this URL with an updated date. Where required by law, additional notice or consent will be provided.</p>
+  </section>
+
+  <section class="legal-section" id="law">
+    <h2>12. Applicable law</h2>
+    <p>These Terms are governed by applicable law. Any mandatory consumer protection rights and dispute forums available where you live remain unaffected. Before starting formal proceedings, you are encouraged to contact GreenHill Studio so we can try to resolve the issue informally.</p>
+  </section>
+
+  <section class="legal-section" id="contact">
+    <h2>13. Contact GreenHill Studio</h2>
+    <p>For questions about these Terms, submit an inquiry through the <a href="https://github.com/haqt2003/greenhill-studio-legal/issues" target="_blank" rel="noopener noreferrer">GreenHill Studio legal support page</a>. Do not include sensitive personal information in a public issue.</p>
+  </section>
+</LegalDocument>

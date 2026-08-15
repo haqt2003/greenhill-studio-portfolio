@@ -1,0 +1,74 @@
+---
+import LegalDocument from '../../components/LegalDocument.astro';
+
+const toc = [
+  { href: '#scope', label: 'Scope' },
+  { href: '#information', label: 'Information collected' },
+  { href: '#use', label: 'How it is used' },
+  { href: '#sharing', label: 'Service providers' },
+  { href: '#storage', label: 'Browser storage' },
+  { href: '#retention', label: 'Retention and security' },
+  { href: '#rights', label: 'Your choices' },
+  { href: '#changes', label: 'Changes and contact' },
+];
+---
+
+<LegalDocument
+  title="Website Privacy Policy · GreenHill Studio"
+  description="Privacy Policy for the GreenHill Studio portfolio website and its contact form."
+  heading="Website Privacy Policy"
+  lede="This policy explains what information this portfolio website handles, why it is needed, and the choices available to you."
+  effective="August 15, 2026"
+  updated="August 15, 2026"
+  alternateHref="/vi/legal/privacy/"
+  {toc}
+>
+  <div slot="notice" class="legal-notice">
+    <strong>This policy covers the portfolio website.</strong>
+    Separate mobile-app policies remain available at their direct URLs for the apps they govern.
+  </div>
+
+  <section class="legal-section" id="scope">
+    <h2>1. Scope and responsible studio</h2>
+    <p>This policy applies to the GreenHill Studio portfolio website, including its project pages and contact form. GreenHill Studio is responsible for the information submitted through the website. It does not cover third-party websites or GreenHill Studio mobile applications, which have their own policies.</p>
+  </section>
+
+  <section class="legal-section" id="information">
+    <h2>2. Information the website handles</h2>
+    <p>If you use the contact form, the website receives the name, email address, project type, and message you provide. Please do not include passwords, payment details, government identifiers, health information, or other sensitive data.</p>
+    <p>The contact endpoint temporarily uses your network address to limit automated or repeated submissions. The hosting provider may also process standard connection information such as IP address, browser type, requested page, and request time to deliver and protect the website.</p>
+  </section>
+
+  <section class="legal-section" id="use">
+    <h2>3. How information is used</h2>
+    <p>Contact information is used to read your enquiry, reply by email, understand the type of work you are considering, prevent abuse, and maintain the security and reliability of the website. It is not used for automated decision-making or sold for advertising.</p>
+  </section>
+
+  <section class="legal-section" id="sharing">
+    <h2>4. Email delivery, hosting, and external links</h2>
+    <p>Contact-form messages are transmitted through Resend, the email-delivery provider, and delivered to GreenHill Studio's private inbox. The hosting provider processes requests needed to serve and protect the site. These providers process information under their own terms and privacy commitments.</p>
+    <p>The portfolio links to GitHub and third-party project websites. Those websites receive information only when you choose to open them, and their own privacy policies apply.</p>
+  </section>
+
+  <section class="legal-section" id="storage">
+    <h2>5. Cookies and browser storage</h2>
+    <p>The website does not currently use advertising, analytics trackers, or marketing cookies. After a contact-form submission, the browser stores a short-lived timestamp in session storage to prevent accidental repeated submissions. It is removed when the browser session ends and is not used to identify you across websites.</p>
+  </section>
+
+  <section class="legal-section" id="retention">
+    <h2>6. Retention and security</h2>
+    <p>Contact messages may remain in the receiving email inbox for as long as reasonably needed to respond, discuss a project, maintain business records, or comply with legal obligations. You may ask GreenHill Studio to delete a message unless it must be retained for a legitimate legal or security reason.</p>
+    <p>The website validates and limits form fields, restricts requests to the configured site origin, applies rate limiting, and sends text-only email. No internet transmission or storage method can be guaranteed to be completely secure.</p>
+  </section>
+
+  <section class="legal-section" id="rights">
+    <h2>7. Your choices and rights</h2>
+    <p>You can browse the portfolio without submitting the contact form. You may ask what contact information GreenHill Studio holds about you, request a correction, or request deletion where applicable. Rights vary by location and may be subject to lawful exceptions.</p>
+  </section>
+
+  <section class="legal-section" id="changes">
+    <h2>8. Changes and contact</h2>
+    <p>This policy may be updated when the website, service providers, or legal requirements change. The latest version will remain at this URL with a revised update date.</p>
+    <p>For privacy questions or requests, use the <a href="/#contact">contact form on the portfolio</a>. Do not include sensitive information in the message.</p>
+  </section>
+</LegalDocument>

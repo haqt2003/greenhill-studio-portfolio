@@ -1,0 +1,39 @@
+---
+interface Props {
+  locale?: 'en' | 'vi';
+  onHome?: boolean;
+}
+
+const { locale = 'en', onHome = true } = Astro.props;
+const isVi = locale === 'vi';
+const homeHref = isVi ? '/vi/' : '/';
+const sectionHref = (id: string) => onHome ? `#${id}` : `${homeHref}#${id}`;
+---
+
+<footer class="site-footer">
+  <div class="shell footer-main">
+    <div>
+      <a class="brand footer-brand" href={onHome ? '#top' : homeHref} aria-label={isVi ? 'Về đầu trang' : 'Back to top'}>
+        <span class="brand-name">GreenHill Studio</span>
+      </a>
+      <p>{isVi ? 'Thiết kế và phát triển ứng dụng, website từ Việt Nam.' : 'Apps and websites, designed and built in Vietnam.'}</p>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <p class="footer-label">{isVi ? 'Điều hướng' : 'Navigate'}</p>
+        <a href={sectionHref('work')}>{isVi ? 'Dự án' : 'Projects'}</a>
+        <a href={sectionHref('services')}>{isVi ? 'Dịch vụ' : 'Services'}</a>
+      </div>
+      <div>
+        <p class="footer-label">{isVi ? 'Khác' : 'More'}</p>
+        <a href="https://github.com/haqt2003" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href={isVi ? '/vi/legal/' : '/legal/'}>{isVi ? 'Pháp lý' : 'Legal'}</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© {new Date().getFullYear()} GreenHill Studio</p>
+  </div>
+</footer>

@@ -1,0 +1,41 @@
+---
+interface Props {
+  locale?: 'en' | 'vi';
+  onHome?: boolean;
+  alternateHref?: string;
+}
+
+const { locale = 'en', onHome = true, alternateHref = locale === 'en' ? '/vi/' : '/' } = Astro.props;
+const isVi = locale === 'vi';
+const homeHref = isVi ? '/vi/' : '/';
+const sectionHref = (id: string) => onHome ? `#${id}` : `${homeHref}#${id}`;
+---
+
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href={onHome ? '#top' : homeHref} aria-label={isVi ? 'Trang chủ GreenHill Studio' : 'GreenHill Studio home'}>
+      <span class="brand-name">GreenHill Studio</span>
+    </a>
+
+    <button
+      class="menu-button"
+      type="button"
+      aria-label={isVi ? 'Mở menu' : 'Open navigation'}
+      aria-expanded="false"
+      aria-controls="site-navigation"
+      data-menu-button
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="site-navigation" class="site-navigation" aria-label={isVi ? 'Điều hướng chính' : 'Primary navigation'} data-navigation>
+      <a href={sectionHref('work')}>{isVi ? 'Dự án' : 'Projects'}</a>
+      <a href={sectionHref('services')}>{isVi ? 'Dịch vụ' : 'Services'}</a>
+      <a class="language-switch" href={alternateHref} lang={isVi ? 'en' : 'vi'} aria-label={isVi ? 'Switch to English' : 'Chuyển sang tiếng Việt'} data-language-switch>
+        {isVi ? 'VI' : 'EN'}
+      </a>
+      <a class="nav-cta" href={sectionHref('contact')}>{isVi ? 'Trao đổi với chúng tôi' : 'Let’s talk'}</a>
+    </nav>
+  </div>
+</header>
