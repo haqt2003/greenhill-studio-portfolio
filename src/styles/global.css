@@ -353,7 +353,6 @@ h3 {
   width: 32%;
   height: auto;
   aspect-ratio: 9 / 16;
-  padding: 5px;
   border-radius: 30px;
   transform: rotate(5deg);
   transform-origin: 50% 88%;
@@ -2456,7 +2455,7 @@ h3 {
     bottom: auto;
     width: 34%;
     height: auto;
-    padding: 4px;
+    padding: 6px;
     border-radius: 23px;
   }
 
