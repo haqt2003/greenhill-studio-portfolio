@@ -2249,7 +2249,8 @@ h3 {
 
   .project-card:first-child .project-visual,
   .project-visual {
-    min-height: 410px;
+    height: clamp(260px, 70vw, 410px);
+    min-height: 0;
   }
 
   .project-laptop {
@@ -2263,7 +2264,7 @@ h3 {
   }
 
   .project-meta {
-    margin-bottom: 34px;
+    margin-bottom: 28px;
   }
 
   .project-content .text-link {
