@@ -1,5 +1,6 @@
-@import '@fontsource-variable/dm-sans';
-@import '@fontsource-variable/manrope';
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/gelasio';
+@import '@fontsource-variable/gelasio/wght-italic.css';
 
 :root {
   color-scheme: dark;
@@ -23,8 +24,9 @@
   --shell: 1180px;
   --section-space: clamp(84px, 9vw, 124px);
   --section-heading-space: clamp(40px, 5vw, 60px);
-  --font-display: 'Manrope', 'DM Sans', ui-sans-serif, system-ui, sans-serif;
-  --font-body: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Gelasio Variable', ui-serif, serif;
 }
 
 *,
@@ -199,7 +201,7 @@ h3 {
   padding: 0;
   border: 1px solid var(--border-strong);
   border-radius: 50%;
-  background: rgba(121, 213, 167, 0.08);
+  background: transparent;
   color: var(--accent-strong);
   font-size: 0.72rem;
   font-weight: 800;
@@ -249,7 +251,7 @@ h3 {
 
 .hero h1 em {
   color: var(--accent-strong);
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-serif);
   font-weight: 400;
   letter-spacing: -0.045em;
 }
@@ -540,7 +542,7 @@ h3 {
 .hero-proof > p {
   margin: 0;
   color: var(--accent-strong);
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-serif);
   font-size: 0.98rem;
   font-style: italic;
   letter-spacing: -0.015em;
@@ -1052,7 +1054,7 @@ h3 {
 
 .learning-nav span {
   margin-right: auto;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-serif);
   font-size: 0.82rem;
   font-weight: 700;
 }
@@ -1099,7 +1101,7 @@ h3 {
 
 .learning-hero strong {
   max-width: 250px;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-serif);
   font-size: 1.75rem;
   font-weight: 500;
   line-height: 1.05;
@@ -1387,7 +1389,7 @@ h3 {
 .principles-card blockquote {
   max-width: none;
   margin: 70px 0 76px;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-serif);
   font-size: clamp(2.25rem, 4vw, 4rem);
   letter-spacing: -0.045em;
   line-height: 1.05;
@@ -1480,7 +1482,7 @@ h3 {
 .member-portrait span {
   position: relative;
   z-index: 2;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-serif);
   font-size: 5.2rem;
   font-style: italic;
   letter-spacing: -0.08em;
@@ -1565,7 +1567,7 @@ h3 {
 .team-note h3 {
   max-width: 440px;
   margin-bottom: 18px;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-serif);
   font-size: clamp(2.1rem, 3.7vw, 3.6rem);
   font-weight: 500;
   letter-spacing: -0.045em;
@@ -1949,7 +1951,9 @@ h3 {
 .footer-bottom {
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
+  gap: 6px;
   width: 100%;
   padding: 24px;
   border-top: 1px solid var(--border);
@@ -1960,6 +1964,16 @@ h3 {
 
 .footer-bottom p {
   margin: 0;
+}
+
+.footer-bottom a {
+  color: var(--muted-strong);
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.footer-bottom a:hover {
+  color: var(--accent);
 }
 
 .js [data-reveal] {
