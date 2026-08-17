@@ -1,5 +1,4 @@
-@import '@fontsource-variable/manrope';
-@import '@fontsource-variable/dm-sans';
+@import '@fontsource-variable/inter';
 @import '@fontsource-variable/gelasio';
 @import '@fontsource-variable/gelasio/wght-italic.css';
 
@@ -25,8 +24,8 @@
   --shell: 1180px;
   --section-space: clamp(84px, 9vw, 124px);
   --section-heading-space: clamp(40px, 5vw, 60px);
-  --font-display: 'Manrope Variable', ui-sans-serif, system-ui, sans-serif;
-  --font-body: 'DM Sans Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
   --font-serif: 'Gelasio Variable', ui-serif, serif;
 }
 
@@ -356,7 +355,7 @@ h3 {
 
 .hero-phone {
   --device-tilt: 5deg;
-  --device-float-y: -10px;
+  --device-float-y: -7px;
 
   top: auto;
   right: 3%;
@@ -365,7 +364,7 @@ h3 {
   height: auto;
   aspect-ratio: 9 / 16;
   border-radius: 30px;
-  animation: hero-device-float 5.8s ease-in-out -2.4s infinite;
+  animation: hero-device-float 6.8s ease-in-out infinite;
   transform: rotate(var(--device-tilt));
   transform-origin: 50% 88%;
   will-change: transform;
