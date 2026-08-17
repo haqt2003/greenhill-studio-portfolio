@@ -326,7 +326,7 @@ h3 {
 
 .hero-laptop {
   --device-tilt: -4deg;
-  --device-float-y: -7px;
+  --device-float-y: -16px;
 
   top: auto;
   bottom: calc(22% + 10px);
@@ -335,7 +335,7 @@ h3 {
   height: auto;
   aspect-ratio: 16 / 10;
   border-radius: 18px 18px 10px 10px;
-  animation: hero-device-float 6.8s ease-in-out infinite;
+  animation: hero-device-float 4.6s ease-in-out infinite;
   transform: rotate(var(--device-tilt));
   transform-origin: 50% 82%;
   will-change: transform;
@@ -355,7 +355,7 @@ h3 {
 
 .hero-phone {
   --device-tilt: 5deg;
-  --device-float-y: -7px;
+  --device-float-y: -16px;
 
   top: auto;
   right: 3%;
@@ -364,7 +364,7 @@ h3 {
   height: auto;
   aspect-ratio: 9 / 16;
   border-radius: 30px;
-  animation: hero-device-float 6.8s ease-in-out infinite;
+  animation: hero-device-float 4.6s ease-in-out infinite;
   transform: rotate(var(--device-tilt));
   transform-origin: 50% 88%;
   will-change: transform;
