@@ -16,8 +16,15 @@ const sectionHref = (id: string) => onHome ? `#${id}` : `${homeHref}#${id}`;
       <a class="brand footer-brand" href={onHome ? '#top' : homeHref} aria-label={isVi ? 'Về đầu trang' : 'Back to top'}>
         <span class="brand-name">GreenHill Studio</span>
       </a>
-      <p>{isVi ? 'Thiết kế và phát triển ứng dụng, website từ Việt Nam.' : 'Apps and websites, designed and built in Vietnam.'}</p>
-      <a class="footer-email" href="mailto:greenhillstudio.vn@gmail.com">greenhillstudio.vn@gmail.com</a>
+      <p class="footer-description">
+        {isVi
+          ? 'GreenHill Studio là đội ngũ thiết kế và phát triển sản phẩm tại Việt Nam, xây dựng ứng dụng di động và website từ ý tưởng ban đầu đến sản phẩm hoàn chỉnh.'
+          : 'GreenHill Studio is a product design and development team in Vietnam, creating mobile apps and websites from early ideas to finished products.'}
+      </p>
+      <p class="footer-contact">
+        <span>Email:</span>
+        <a href="mailto:greenhillstudio.vn@gmail.com">greenhillstudio.vn@gmail.com</a>
+      </p>
     </div>
 
     <div class="footer-links">

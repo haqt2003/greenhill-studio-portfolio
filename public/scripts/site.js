@@ -1,23 +1,47 @@
 document.documentElement.classList.add('js');
 
 const navigationEntry = performance.getEntriesByType('navigation')[0];
-const shouldResetScroll = !window.location.hash && navigationEntry?.type === 'reload';
+const initialScrollTarget = (() => {
+  const hash = window.location.hash.slice(1);
+  if (!hash) return '';
+
+  try {
+    return decodeURIComponent(hash);
+  } catch {
+    return hash;
+  }
+})();
+const shouldResetScroll = !initialScrollTarget && navigationEntry?.type === 'reload';
+const cleanUrl = () => `${window.location.pathname}${window.location.search}`;
+
+if (initialScrollTarget) {
+  history.replaceState(history.state, '', cleanUrl());
+}
 
 if ('scrollRestoration' in history) {
   history.scrollRestoration = shouldResetScroll ? 'manual' : 'auto';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const restoreHashPosition = () => {
-    const targetId = window.location.hash.slice(1);
+  let storedScrollTarget = '';
+  try {
+    storedScrollTarget = sessionStorage.getItem('greenhill-scroll-target') || '';
+    sessionStorage.removeItem('greenhill-scroll-target');
+  } catch {
+    storedScrollTarget = '';
+  }
+
+  const requestedScrollTarget = initialScrollTarget || storedScrollTarget;
+  const restoreScrollPosition = () => {
+    const targetId = requestedScrollTarget;
     if (!targetId) return;
     document.getElementById(targetId)?.scrollIntoView();
   };
 
   if (document.fonts?.ready) {
-    document.fonts.ready.then(() => window.requestAnimationFrame(restoreHashPosition));
+    document.fonts.ready.then(() => window.requestAnimationFrame(restoreScrollPosition));
   } else {
-    window.requestAnimationFrame(restoreHashPosition);
+    window.requestAnimationFrame(restoreScrollPosition);
   }
 
   if (shouldResetScroll) {
@@ -40,12 +64,45 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const languageSwitch = document.querySelector('[data-language-switch]');
-  languageSwitch?.addEventListener('click', () => {
-    const href = languageSwitch.getAttribute('href');
-    if (window.location.hash && href && !href.includes('#')) {
-      languageSwitch.setAttribute('href', `${href}${window.location.hash}`);
+  document.addEventListener('click', (event) => {
+    if (
+      event.defaultPrevented
+      || event.button !== 0
+      || event.metaKey
+      || event.ctrlKey
+      || event.shiftKey
+      || event.altKey
+    ) return;
+
+    const clickedElement = event.target instanceof Element ? event.target : null;
+    const link = clickedElement?.closest('a[href*="#"]');
+    if (!(link instanceof HTMLAnchorElement) || link.target === '_blank' || link.hasAttribute('download')) return;
+
+    const targetUrl = new URL(link.href, window.location.href);
+    if (targetUrl.origin !== window.location.origin || !targetUrl.hash) return;
+
+    let targetId = targetUrl.hash.slice(1);
+    try {
+      targetId = decodeURIComponent(targetId);
+    } catch {
+      // Keep the original fragment when it is not valid URI text.
     }
+    if (!targetId) return;
+
+    event.preventDefault();
+
+    if (targetUrl.pathname === window.location.pathname) {
+      document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+      history.replaceState(history.state, '', cleanUrl());
+      return;
+    }
+
+    try {
+      sessionStorage.setItem('greenhill-scroll-target', targetId);
+    } catch {
+      // Navigation still works even when session storage is unavailable.
+    }
+    window.location.assign(`${targetUrl.pathname}${targetUrl.search}`);
   });
 
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
