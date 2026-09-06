@@ -34,8 +34,6 @@ const sectionHref = (id: string) => onHome ? `#${id}` : `${homeHref}#${id}`;
         <a href={sectionHref('services')}>{isVi ? 'Dịch vụ' : 'Services'}</a>
       </div>
       <div>
-        <p class="footer-label">{isVi ? 'Khác' : 'More'}</p>
-        <a href="https://github.com/haqt2003" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href={isVi ? '/vi/legal/' : '/legal/'}>{isVi ? 'Pháp lý' : 'Legal'}</a>
       </div>
     </div>
