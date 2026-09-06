@@ -13,8 +13,23 @@ const projectTitle = project.title[locale];
 ---
 
 <article class:list={['project-card', `project-${project.theme}`]} data-reveal>
-  <div class:list={['project-visual', !project.image && 'project-visual-pending']}>
-    {project.image?.presentation === 'laptop' ? (
+  <div class:list={['project-visual', !project.image && 'project-visual-pending', project.image?.presentation === 'showcase' && 'project-visual-showcase']}>
+    {project.image?.presentation === 'showcase' ? (
+      <div class="project-showcase" role="img" aria-label={project.image.alt[locale]}>
+        <div class="project-browser" aria-hidden="true">
+          <div class="project-browser-toolbar">
+            <span class="project-browser-dots"><i></i><i></i><i></i></span>
+            <span class="project-browser-address">{project.image.domain}</span>
+          </div>
+          <img src={project.image.src} alt="" width="1280" height="720" loading="lazy" decoding="async" />
+        </div>
+        {project.image.mobileSrc && (
+          <div class="project-phone" aria-hidden="true">
+            <img src={project.image.mobileSrc} alt="" width="361" height="780" loading="lazy" decoding="async" />
+          </div>
+        )}
+      </div>
+    ) : project.image?.presentation === 'laptop' ? (
       <div class="project-laptop">
         <div class="project-laptop-screen">
           <img

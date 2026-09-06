@@ -16,7 +16,9 @@ export interface Project {
   image?: {
     src: string;
     alt: LocalizedText;
-    presentation?: 'cover' | 'laptop';
+    presentation?: 'cover' | 'laptop' | 'showcase';
+    mobileSrc?: string;
+    domain?: string;
   };
 }
 
@@ -52,12 +54,14 @@ export const projects: Project[] = [
     href: 'https://www.vmerdi.edu.vn/',
     theme: 'sand',
     image: {
-      src: '/images/projects/vmerdi-home.jpg',
+      src: '/images/projects/vmerdi-desktop.webp',
+      mobileSrc: '/images/projects/vmerdi-mobile.webp',
+      domain: 'vmerdi.edu.vn',
       alt: {
-        en: 'VMERDI website homepage',
-        vi: 'Trang chủ website VMERDI',
+        en: 'VMERDI homepage shown in desktop and mobile mockups',
+        vi: 'Giao diện trang chủ VMERDI trong mockup máy tính và điện thoại',
       },
-      presentation: 'laptop',
+      presentation: 'showcase',
     },
   },
   {
@@ -76,10 +80,13 @@ export const projects: Project[] = [
     href: 'https://www.quytuthienbantaynho.edu.vn/vi',
     theme: 'coral',
     image: {
-      src: '/images/projects/quy-ban-tay-nho.jpg',
+      src: '/images/projects/bantaynho-desktop.webp',
+      mobileSrc: '/images/projects/bantaynho-mobile.webp',
+      domain: 'quytuthienbantaynho.edu.vn',
+      presentation: 'showcase',
       alt: {
-        en: 'Children featured on the Bàn Tay Nhỏ Charity website',
-        vi: 'Các em nhỏ xuất hiện trên website Quỹ Bàn Tay Nhỏ',
+        en: 'Bàn Tay Nhỏ Charity homepage shown in desktop and mobile mockups',
+        vi: 'Giao diện trang chủ Quỹ Bàn Tay Nhỏ trong mockup máy tính và điện thoại',
       },
     },
   },
