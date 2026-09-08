@@ -135,13 +135,14 @@ h3 {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
   color: var(--text);
-  font-family: var(--font-display);
-  font-size: 0.96rem;
-  font-weight: 800;
-  letter-spacing: -0.01em;
   text-decoration: none;
+}
+
+.brand-logo {
+  display: block;
+  width: auto;
+  height: 38px;
 }
 
 .brand-mark {
@@ -2027,6 +2028,10 @@ h3 {
   margin-bottom: 18px;
 }
 
+.footer-brand .brand-logo {
+  height: 44px;
+}
+
 .footer-description {
   max-width: 520px;
   color: var(--muted);
@@ -2305,6 +2310,10 @@ h3 {
 
   .header-inner {
     min-height: 70px;
+  }
+
+  .brand-logo {
+    height: 34px;
   }
 
   .site-navigation {
