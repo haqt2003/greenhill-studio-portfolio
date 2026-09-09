@@ -2029,7 +2029,9 @@ h3 {
 }
 
 .footer-brand .brand-logo {
-  height: 44px;
+  width: 240px;
+  max-width: 100%;
+  height: auto;
 }
 
 .footer-description {
