@@ -679,6 +679,40 @@ h3 {
   object-fit: cover;
 }
 
+.project-app-showcase {
+  position: absolute;
+  inset: 7%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7%;
+}
+
+.project-app-device {
+  flex: 0 0 auto;
+  height: 90%;
+  aspect-ratio: 540 / 1212;
+  overflow: hidden;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  background: #101010;
+  box-shadow: 0 24px 40px rgba(5, 20, 12, 0.4);
+  transform: translateY(-3%) rotate(-7deg);
+}
+
+.project-app-device + .project-app-device {
+  transform: translateY(3%) rotate(6deg);
+}
+
+.project-app-device img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  object-fit: contain;
+}
+
 .project-sand .project-image {
   object-position: center top;
 }
@@ -2085,6 +2119,13 @@ h3 {
   margin-top: 9px;
   color: var(--muted-strong);
   text-decoration: none;
+}
+
+.footer-links a.footer-label {
+  margin-top: 0;
+  color: var(--accent-strong);
+  font-weight: 650;
+  letter-spacing: -0.01em;
 }
 
 .footer-links a:hover {

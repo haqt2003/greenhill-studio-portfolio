@@ -10,11 +10,24 @@ interface Props {
 const { project, index, locale } = Astro.props;
 const isVi = locale === 'vi';
 const projectTitle = project.title[locale];
+const appImageSrc = isVi && project.image?.srcVi ? project.image.srcVi : project.image?.src;
+const appCameraSrc = isVi && project.image?.mobileSrcVi ? project.image.mobileSrcVi : project.image?.mobileSrc;
 ---
 
 <article class:list={['project-card', `project-${project.theme}`]} data-reveal>
   <div class:list={['project-visual', !project.image && 'project-visual-pending', project.image?.presentation === 'showcase' && 'project-visual-showcase']}>
-    {project.image?.presentation === 'showcase' ? (
+    {project.image?.presentation === 'app' ? (
+      <div class="project-app-showcase" role="img" aria-label={project.image.alt[locale]}>
+        <div class="project-app-device" aria-hidden="true">
+          <img src={appImageSrc} alt="" width="540" height="1212" loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
+        </div>
+        {appCameraSrc && (
+          <div class="project-app-device" aria-hidden="true">
+            <img src={appCameraSrc} alt="" width="540" height="1212" loading="lazy" decoding="async" />
+          </div>
+        )}
+      </div>
+    ) : project.image?.presentation === 'showcase' ? (
       <div class="project-showcase" role="img" aria-label={project.image.alt[locale]}>
         <div class="project-browser" aria-hidden="true">
           <div class="project-browser-toolbar">
@@ -71,7 +84,7 @@ const projectTitle = project.title[locale];
     </ul>
     {project.href ? (
       <a class="text-link" href={project.href} target="_blank" rel="noopener noreferrer">
-        {isVi ? 'Mở dự án' : 'Visit project'} <span aria-hidden="true">↗</span>
+        {project.linkLabel?.[locale] ?? (isVi ? 'Mở dự án' : 'Visit project')} <span aria-hidden="true">↗</span>
       </a>
     ) : (
       <span class="text-link text-link-disabled">

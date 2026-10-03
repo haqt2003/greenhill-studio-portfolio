@@ -12,31 +12,47 @@ export interface Project {
   description: LocalizedText;
   tags: LocalizedText[];
   href?: string;
+  linkLabel?: LocalizedText;
   theme: 'sage' | 'sand' | 'coral';
   image?: {
     src: string;
     alt: LocalizedText;
-    presentation?: 'cover' | 'laptop' | 'showcase';
+    presentation?: 'cover' | 'laptop' | 'showcase' | 'app';
     mobileSrc?: string;
+    srcVi?: string;
+    mobileSrcVi?: string;
     domain?: string;
   };
 }
 
 export const projects: Project[] = [
   {
-    title: { en: 'Progress', vi: 'Progress' },
+    title: { en: 'Photogress', vi: 'Photogress' },
     category: { en: 'Mobile product', vi: 'Sản phẩm di động' },
     year: '2026',
     description: {
-      en: 'A private Android journal for comparing progress photos side by side and keeping a clear record over time.',
-      vi: 'Ứng dụng Android giúp lưu ảnh tiến trình riêng tư, so sánh từng giai đoạn và nhìn lại thay đổi theo thời gian.',
+      en: 'An Android photo journal for capturing changes over time. Match each shot with a previous-photo overlay, organize your projects and turn your photos into time-lapse videos.',
+      vi: 'Ứng dụng Android giúp ghi lại thay đổi qua từng bức ảnh. Căn góc chụp bằng ảnh trước, sắp xếp theo dự án và tạo video time-lapse từ hành trình của bạn.',
     },
     tags: [
       { en: 'Product design', vi: 'Thiết kế sản phẩm' },
       { en: 'Android', vi: 'Android' },
       { en: 'Local-first', vi: 'Ưu tiên dữ liệu cục bộ' },
     ],
+    href: 'https://play.google.com/store/apps/details?id=com.greenhillstudio.photogress',
+    linkLabel: { en: 'Get it on Google Play', vi: 'Tải trên Google Play' },
     theme: 'sage',
+    image: {
+      src: '/images/projects/photogress-home-en.webp',
+      mobileSrc: '/images/projects/photogress-camera-en.webp',
+      srcVi: '/images/projects/photogress-home-vi.webp',
+      mobileSrcVi: '/images/projects/photogress-camera-vi.webp',
+      presentation: 'app',
+      alt: {
+        en: 'Photogress project library and camera with a previous-photo overlay on Android',
+        vi: 'Thư viện dự án và camera căn góc bằng ảnh trước của Photogress trên Android',
+      },
+    },
   },
   {
     title: { en: 'VMERDI', vi: 'VMERDI' },
