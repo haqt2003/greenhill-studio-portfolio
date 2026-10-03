@@ -688,29 +688,31 @@ h3 {
   gap: 7%;
 }
 
-.project-app-device {
+.project-phone.project-app-device {
+  position: relative;
+  right: auto;
+  bottom: auto;
   flex: 0 0 auto;
-  height: 90%;
-  aspect-ratio: 540 / 1212;
-  overflow: hidden;
-  padding: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 24px;
+  width: auto;
+  height: 85%;
+  /* Match the VMERDI phone's outer shell, including its bezel. */
+  aspect-ratio: 1 / 2.08;
+  border-width: clamp(3px, 0.47vw, 6px);
+  border-radius: 17% / 8.2%;
   background: #101010;
-  box-shadow: 0 24px 40px rgba(5, 20, 12, 0.4);
-  transform: translateY(-3%) rotate(-7deg);
+  transform: translateY(-3%) rotate(-5deg);
 }
 
-.project-app-device + .project-app-device {
-  transform: translateY(3%) rotate(6deg);
+.project-phone.project-app-device + .project-app-device {
+  transform: translateY(3%) rotate(5deg);
 }
 
-.project-app-device img {
+.project-phone.project-app-device img {
   display: block;
   width: 100%;
   height: 100%;
-  border-radius: 18px;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
 }
 
 .project-sand .project-image {

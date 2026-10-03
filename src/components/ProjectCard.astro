@@ -18,11 +18,11 @@ const appCameraSrc = isVi && project.image?.mobileSrcVi ? project.image.mobileSr
   <div class:list={['project-visual', !project.image && 'project-visual-pending', project.image?.presentation === 'showcase' && 'project-visual-showcase']}>
     {project.image?.presentation === 'app' ? (
       <div class="project-app-showcase" role="img" aria-label={project.image.alt[locale]}>
-        <div class="project-app-device" aria-hidden="true">
+        <div class="project-phone project-app-device" aria-hidden="true">
           <img src={appImageSrc} alt="" width="540" height="1212" loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
         </div>
         {appCameraSrc && (
-          <div class="project-app-device" aria-hidden="true">
+          <div class="project-phone project-app-device" aria-hidden="true">
             <img src={appCameraSrc} alt="" width="540" height="1212" loading="lazy" decoding="async" />
           </div>
         )}
