@@ -11,28 +11,16 @@ const { project, index, locale } = Astro.props;
 const isVi = locale === 'vi';
 const projectTitle = project.title[locale];
 const appImageSrc = isVi && project.image?.srcVi ? project.image.srcVi : project.image?.src;
-const appCameraSrc = isVi && project.image?.mobileSrcVi ? project.image.mobileSrcVi : project.image?.mobileSrc;
+const appSecondarySrc = isVi && project.image?.mobileSrcVi ? project.image.mobileSrcVi : project.image?.mobileSrc;
 ---
 
 <article class:list={['project-card', `project-${project.theme}`]} data-reveal>
   <div class:list={['project-visual', !project.image && 'project-visual-pending', project.image?.presentation === 'showcase' && 'project-visual-showcase']}>
     {project.image?.presentation === 'app' ? (
       <div class="project-app-showcase" role="img" aria-label={project.image.alt[locale]}>
-        <div class="project-app-device" aria-hidden="true">
-          <div class="project-app-screen">
-            <img src={appImageSrc} alt="" width="540" height="1212" loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
-          </div>
-          <span class="project-app-camera"></span>
-          <span class="project-app-buttons"></span>
-        </div>
-        {appCameraSrc && (
-          <div class="project-app-device" aria-hidden="true">
-            <div class="project-app-screen">
-              <img src={appCameraSrc} alt="" width="540" height="1212" loading="lazy" decoding="async" />
-            </div>
-            <span class="project-app-camera"></span>
-            <span class="project-app-buttons"></span>
-          </div>
+        <img class="project-app-store-image" src={appImageSrc} alt="" width="720" height="1280" loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
+        {appSecondarySrc && (
+          <img class="project-app-store-image" src={appSecondarySrc} alt="" width="720" height="1280" loading="lazy" decoding="async" />
         )}
       </div>
     ) : project.image?.presentation === 'showcase' ? (
