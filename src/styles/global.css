@@ -688,31 +688,73 @@ h3 {
   gap: 7%;
 }
 
-.project-phone.project-app-device {
+.project-app-device {
+  --phone-bezel: clamp(3px, 0.4vw, 5px);
+  --phone-radius: clamp(15px, 2.3vw, 30px);
   position: relative;
-  right: auto;
-  bottom: auto;
   flex: 0 0 auto;
   width: auto;
-  height: 85%;
-  /* Match the VMERDI phone's outer shell, including its bezel. */
-  aspect-ratio: 1 / 2.08;
-  border-width: clamp(3px, 0.47vw, 6px);
-  border-radius: 17% / 8.2%;
+  height: 84%;
+  aspect-ratio: 9 / 18.5;
+  padding: var(--phone-bezel);
+  border: 1px solid #717b81;
+  border-radius: var(--phone-radius);
+  background: linear-gradient(120deg, #24282b, #090a0b 35%, #16191b);
+  box-shadow: inset 0 0 0 1px #08090a, 0 20px 30px -12px rgba(8, 20, 14, 0.65);
+  transform: translateY(-3%) rotate(-4deg);
+}
+
+.project-app-device + .project-app-device {
+  transform: translateY(3%) rotate(4deg);
+}
+
+.project-app-screen {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: calc(var(--phone-radius) - var(--phone-bezel) - 1px);
   background: #101010;
-  transform: translateY(-3%) rotate(-5deg);
 }
 
-.project-phone.project-app-device + .project-app-device {
-  transform: translateY(3%) rotate(5deg);
-}
-
-.project-phone.project-app-device img {
+.project-app-screen img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* Keep the entire real screenshot, including status and gesture bars. */
+  object-fit: contain;
   object-position: center;
+}
+
+.project-app-camera {
+  position: absolute;
+  top: 2.8%;
+  left: 50%;
+  width: 3.8%;
+  aspect-ratio: 1;
+  border: 1px solid #232b31;
+  border-radius: 50%;
+  background: #030405;
+  transform: translateX(-50%);
+}
+
+.project-app-buttons {
+  position: absolute;
+  top: 23%;
+  right: -2px;
+  width: 2px;
+  height: 13%;
+  border-radius: 0 2px 2px 0;
+  background: #596269;
+}
+
+.project-app-buttons::after {
+  position: absolute;
+  top: 130%;
+  width: 2px;
+  height: 58%;
+  border-radius: inherit;
+  background: inherit;
+  content: '';
 }
 
 .project-sand .project-image {
