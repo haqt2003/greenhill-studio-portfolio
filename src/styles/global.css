@@ -690,8 +690,11 @@ h3 {
 
 .project-app-store-image {
   display: block;
-  width: 48.5%;
-  height: 100%;
+  width: auto;
+  max-width: 48.5%;
+  height: auto;
+  max-height: 100%;
+  border-radius: clamp(8px, 1.2vw, 16px);
   /* Reuse the complete store artwork, without another device frame or crop. */
   object-fit: contain;
   object-position: center;
