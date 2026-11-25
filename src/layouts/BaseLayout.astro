@@ -10,7 +10,10 @@ interface Props {
 
 const { title, description, lang = 'en', alternateHref } = Astro.props;
 const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astro.url;
-const socialCardURL = new URL('/social-card.png', canonicalURL);
+const socialCardURL = new URL('/social-card-ribbon-v2.png', canonicalURL);
+const socialCardAlt = lang === 'vi'
+  ? 'GreenHill Studio — Thiết kế và phát triển sản phẩm mobile và web, với logo dải ruy băng trắng.'
+  : 'GreenHill Studio — Mobile and web products, with the white ribbon logo.';
 const alternateURL = alternateHref ? new URL(alternateHref, canonicalURL) : undefined;
 
 ---
@@ -34,14 +37,19 @@ const alternateURL = alternateHref ? new URL(alternateHref, canonicalURL) : unde
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={socialCardURL} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content={socialCardAlt} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialCardURL} />
+    <meta name="twitter:image:alt" content={socialCardAlt} />
     <link rel="canonical" href={canonicalURL} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=ribbon-symbol" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=ribbon-v2" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=ribbon-v2" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=ribbon-v2" />
     {alternateURL && <link rel="alternate" hreflang={lang === 'en' ? 'vi' : 'en'} href={alternateURL} />}
     <title>{title}</title>
     <script is:inline src="/scripts/site.js"></script>

@@ -48,6 +48,8 @@ CONTACT_SITE_ORIGIN=https://your-final-domain.com
 
 ## Content updates
 
+- Approved studio logo: `public/logo-greenhill-ribbon-symbol.svg`. Header and footer use it directly. After changing it, run `npm run brand:generate` to update the social-card SVG/PNGs, favicon SVG/ICO/PNG and Apple touch icon together. The shared metadata uses `social-card-ribbon-v2.png`; the old `social-card.png` URL is also kept current for compatibility. When the logo changes again, version the metadata image filename to avoid reusing a cached preview.
+- Previous logo concepts are preserved in `design/archive/brand-v2/`, outside the deployed `public/` directory.
 - Featured projects: `src/data/projects.ts`
 - Homepage sections and service copy: `src/pages/index.astro`
 - English/Vietnamese project archive: `src/pages/projects.astro`
